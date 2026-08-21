@@ -4,8 +4,8 @@
   "description": "Solar energy and electrical engineering solutions — design, installation, commissioning, and maintenance.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#dde3ea",
-  "theme_color": "#0f6b6b",
+  "background_color": "#f3f5f7",
+  "theme_color": "#0c5f5f",
   "lang": "en",
   "icons": [
     {

@@ -19,8 +19,8 @@ const sora = Sora({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#dde3ea" },
-    { media: "(prefers-color-scheme: dark)", color: "#dde3ea" },
+    { media: "(prefers-color-scheme: light)", color: "#f3f5f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#f3f5f7" },
   ],
   colorScheme: "light",
   width: "device-width",

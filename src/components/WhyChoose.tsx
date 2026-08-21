@@ -1,11 +1,35 @@
 import { industries, whyChooseUs } from "@/lib/content";
-import { NeuSurface } from "@/components/NeuSurface";
+import { Panel } from "@/components/Panel";
+
+export function Standards() {
+  return (
+    <section
+      id="standards"
+      className="safe-px section-y scroll-mt-20"
+      aria-labelledby="standards-heading"
+    >
+      <div className="border-border bg-accent mx-auto max-w-6xl border px-6 py-10 text-white sm:px-10 sm:py-12">
+        <h2
+          id="standards-heading"
+          className="font-display text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
+        >
+          Safety and compliance are not extras. They are the work.
+        </h2>
+        <p className="mt-4 max-w-3xl text-[clamp(0.95rem,2.1vw,1.05rem)] leading-relaxed text-pretty text-white/90">
+          We help clients ensure electrical systems meet applicable standards
+          while reducing risk from faults, surge events, and lightning —
+          protecting people, property, and continuity of operations.
+        </p>
+      </div>
+    </section>
+  );
+}
 
 export function WhyChoose() {
   return (
     <section
       id="why-us"
-      className="safe-px xs:py-10 scroll-mt-[max(6rem,calc(env(safe-area-inset-top)+5rem))] py-8 sm:py-12 md:py-14"
+      className="safe-px section-y scroll-mt-20 pt-0"
       aria-labelledby="why-us-heading"
       aria-describedby="why-us-intro"
     >
@@ -13,42 +37,38 @@ export function WhyChoose() {
         <header className="max-w-2xl">
           <h2
             id="why-us-heading"
-            className="font-display text-neu-text text-[clamp(1.35rem,3.5vw,1.875rem)] font-bold tracking-tight text-balance"
+            className="font-display text-ink text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
           >
-            Why choose San Marina Engineering Limited?
+            Why organizations choose San Marina
           </h2>
-          <p
-            id="why-us-intro"
-            className="text-neu-muted mt-3 text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
-          >
-            Safety, reliability, energy efficiency, and future scalability in
-            every installation — delivered by a qualified engineering team.
+          <p id="why-us-intro" className="text-muted mt-3 text-pretty">
+            Mature delivery: qualified people, controlled quality, and support
+            that continues after commissioning.
           </p>
         </header>
 
         <ul
-          className="xs:mt-8 xs:gap-5 mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           role="list"
           aria-label="Reasons to choose San Marina Engineering"
         >
           {whyChooseUs.map((item) => (
             <li key={item.title}>
-              <NeuSurface
+              <Panel
                 as="article"
-                variant="raised-sm"
-                className="xs:p-6 h-full p-5 transition-transform duration-300 motion-safe:hover:-translate-y-1"
+                className="h-full p-5 sm:p-6"
                 aria-labelledby={`why-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
               >
                 <h3
                   id={`why-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
-                  className="font-display text-neu-accent xs:text-lg text-base font-semibold"
+                  className="font-display text-ink text-base font-semibold"
                 >
                   {item.title}
                 </h3>
-                <p className="text-neu-muted mt-2 text-sm leading-relaxed text-pretty">
+                <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
                   {item.body}
                 </p>
-              </NeuSurface>
+              </Panel>
             </li>
           ))}
         </ul>
@@ -61,47 +81,37 @@ export function Industries() {
   return (
     <section
       id="industries"
-      className="safe-px xs:py-10 scroll-mt-[max(6rem,calc(env(safe-area-inset-top)+5rem))] py-8 sm:py-12 md:py-14"
+      className="safe-px section-y border-border scroll-mt-20 border-t"
       aria-labelledby="industries-heading"
       aria-describedby="industries-intro"
     >
       <div className="mx-auto max-w-6xl">
-        <NeuSurface
-          variant="inset"
-          className="xs:p-6 p-4 sm:p-8 md:p-10"
-          role="region"
-        >
-          <header>
-            <h2
-              id="industries-heading"
-              className="font-display text-neu-text text-[clamp(1.35rem,3.5vw,1.875rem)] font-bold tracking-tight text-balance"
-            >
-              Industries we serve
-            </h2>
-            <p
-              id="industries-intro"
-              className="text-neu-muted mt-3 max-w-2xl text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
-            >
-              From residential developments to utilities and institutions —
-              power solutions shaped around your sector&apos;s technical and
-              compliance needs.
-            </p>
-          </header>
-          <ul
-            className="xs:mt-8 xs:grid-cols-2 xs:gap-3 mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-3 lg:grid-cols-4"
-            role="list"
-            aria-label="Industries served by San Marina Engineering"
+        <header className="max-w-2xl">
+          <h2
+            id="industries-heading"
+            className="font-display text-ink text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
           >
-            {industries.map((industry) => (
-              <li
-                key={industry}
-                className="neu-raised-sm text-neu-text xs:px-4 flex min-h-11 items-center rounded-2xl px-3 py-2.5 text-sm"
-              >
-                {industry}
-              </li>
-            ))}
-          </ul>
-        </NeuSurface>
+            Industries we serve
+          </h2>
+          <p id="industries-intro" className="text-muted mt-3 text-pretty">
+            Sector experience across facilities where power quality, safety, and
+            uptime matter.
+          </p>
+        </header>
+        <ul
+          className="border-border mt-8 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3"
+          role="list"
+          aria-label="Industries served"
+        >
+          {industries.map((industry) => (
+            <li
+              key={industry}
+              className="border-border text-ink flex min-h-12 items-center border-b px-1 py-3 text-sm sm:px-3"
+            >
+              {industry}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

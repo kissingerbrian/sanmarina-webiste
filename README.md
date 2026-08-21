@@ -2,7 +2,7 @@
 
 Static marketing website for **San Marina Engineering Limited** — solar energy, critical power, building electrical, safety & compliance, and operations & maintenance.
 
-Built with a neumorphic UI, strong SEO, and accessibility-first markup.
+Built with a quiet engineering visual system, strong SEO, and accessibility-first markup.
 
 ## Stack (locked)
 
@@ -16,11 +16,11 @@ Do not change these versions without an explicit project decision. See `.cursor/
 
 ## Features
 
-- Static export (`output: "export"`) — deploy the `out/` folder to any static host
-- Neumorphic design system (soft raised/inset surfaces)
+- Quiet engineering design (matte surfaces, hairline borders, restrained color)
 - SEO: metadata, Open Graph, JSON-LD, `sitemap.xml`, `robots.txt`, web manifest
 - Accessibility: skip link, landmarks, ARIA labels, keyboard-friendly mobile nav, reduced-motion support
 - Responsive layout from narrow phones through large desktops (includes `xs` breakpoint)
+- Homepage structured as a credibility brief: positioning → capabilities → detail → contact
 
 ## Getting started
 
@@ -56,7 +56,7 @@ npm run lint
 ```text
 src/
   app/           # App Router pages, layout, globals, sitemap, robots
-  components/    # UI (header, hero, services, footer, neu primitives)
+  components/    # UI (header, hero, capabilities, footer, primitives)
   lib/           # Content + SEO helpers
 .cursor/rules/   # Mandatory agent rules (versions, lint/format, design)
 public/          # Icons, OG image, web manifest

@@ -22,5 +22,5 @@ These versions are **mandatory**. Do not upgrade, downgrade, or substitute them.
 - Never run `npm install next@latest` or similar for these packages.
 - If a new dependency conflicts with these versions, resolve without changing the locked stack.
 - This is a **static** Next.js site (`output: "export"`). Do not add server-only APIs, Route Handlers that require a Node server, or features incompatible with static export.
-- UI style: **neumorphism** (soft UI). Keep visual language consistent across pages.
+- UI style: **quiet engineering** (matte, restrained, professional). See `quiet-engineering.mdc`.
 - Before writing Next.js APIs, read guides under `node_modules/next/dist/docs/` — this Next.js version may differ from training data.

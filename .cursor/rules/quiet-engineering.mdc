@@ -1,0 +1,16 @@
+---
+description: Quiet engineering visual system for San Marina
+alwaysApply: true
+---
+
+# Design and site conventions
+
+- Visual system: **quiet engineering** — matte surfaces, hairline borders, precise alignment, restrained color. No neumorphism, no dual soft box-shadows, no decorative glow/float widgets.
+- Depth: almost none. At most one subtle elevation (e.g. sticky header). Prefer 1px borders and section rules.
+- Brand: **San Marina Engineering Limited**. Tagline: *Engineering Reliable Power. Building a Sustainable Future.*
+- Homepage strategy: credibility brief first (who, why trust, proof), then focused capabilities — not a dense service catalog as the hero experience.
+- Palette: slate text, teal structure/accent, amber used sparingly for solar emphasis. Keep light professional backgrounds.
+- Prefer expressive fonts (project Google fonts). Do not fall back to Inter, Roboto, Arial, or system UI stacks.
+- Avoid purple gradients, generic AI-landing aesthetics, and dark-mode-by-default.
+- Static marketing site only — no auth, no CMS backend, no dynamic server features.
+- Accessibility: strong contrast, visible focus, keyboard-friendly controls, reduced-motion respect.

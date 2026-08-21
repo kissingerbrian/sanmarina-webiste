@@ -1,19 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle ogDesc">
   <title id="ogTitle">San Marina Engineering Limited</title>
   <desc id="ogDesc">Engineering Reliable Power. Building a Sustainable Future.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#dde3ea"/>
-      <stop offset="55%" stop-color="#d0d8e2"/>
-      <stop offset="100%" stop-color="#c5d0db"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="980" cy="120" r="160" fill="#c98a2e" opacity="0.22"/>
-  <circle cx="160" cy="520" r="200" fill="#0f6b6b" opacity="0.18"/>
-  <rect x="72" y="72" width="1056" height="486" rx="48" fill="#dde3ea" stroke="#f5f8fc" stroke-width="4"/>
-  <text x="120" y="230" font-family="Sora, Manrope, Arial, sans-serif" font-size="54" font-weight="700" fill="#2a3544">San Marina Engineering Limited</text>
-  <text x="120" y="310" font-family="Sora, Manrope, Arial, sans-serif" font-size="34" font-weight="600" fill="#0f6b6b">Engineering Reliable Power.</text>
-  <text x="120" y="360" font-family="Sora, Manrope, Arial, sans-serif" font-size="34" font-weight="600" fill="#0f6b6b">Building a Sustainable Future.</text>
-  <text x="120" y="460" font-family="Manrope, Arial, sans-serif" font-size="24" fill="#5a6878">Solar · Critical Power · Building Electrical · Safety · O&amp;M</text>
+  <rect width="1200" height="630" fill="#f3f5f7"/>
+  <rect x="0" y="0" width="12" height="630" fill="#0c5f5f"/>
+  <rect x="72" y="72" width="1056" height="486" fill="#ffffff" stroke="#cfd6de" stroke-width="2"/>
+  <text x="120" y="230" font-family="Sora, Manrope, Arial, sans-serif" font-size="52" font-weight="700" fill="#1a2330">San Marina Engineering Limited</text>
+  <text x="120" y="300" font-family="Sora, Manrope, Arial, sans-serif" font-size="30" font-weight="600" fill="#0c5f5f">Engineering Reliable Power.</text>
+  <text x="120" y="348" font-family="Sora, Manrope, Arial, sans-serif" font-size="30" font-weight="600" fill="#0c5f5f">Building a Sustainable Future.</text>
+  <text x="120" y="440" font-family="Manrope, Arial, sans-serif" font-size="22" fill="#4d5b6b">Solar · Critical Power · Building Electrical · Safety · O&amp;M</text>
 </svg>

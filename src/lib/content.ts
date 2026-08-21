@@ -2,18 +2,71 @@ export const company = {
   name: "San Marina Engineering Limited",
   shortName: "San Marina",
   tagline: "Engineering Reliable Power. Building a Sustainable Future.",
+  positioning:
+    "End-to-end solar and electrical engineering for organizations that cannot afford downtime, ambiguity, or non-compliant work.",
   blurb:
     "A leading engineering company specializing in solar energy and electrical engineering solutions for residential, commercial, industrial, and institutional clients.",
+  proofLine:
+    "Design · Installation · Testing · Commissioning · Long-term maintenance",
 } as const;
 
 export const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#solar", label: "Solar" },
-  { href: "#critical-power", label: "Critical Power" },
-  { href: "#building-electrical", label: "Building Electrical" },
-  { href: "#safety", label: "Safety" },
-  { href: "#maintenance", label: "Maintenance" },
+  { href: "#capabilities", label: "Capabilities" },
+  { href: "#approach", label: "Approach" },
+  { href: "#industries", label: "Industries" },
   { href: "#contact", label: "Contact" },
+] as const;
+
+export const capabilities = [
+  {
+    id: "solar",
+    title: "Solar energy",
+    summary:
+      "Engineered PV and hybrid systems sized for yield, reliability, and the client's operational reality.",
+  },
+  {
+    id: "critical-power",
+    title: "Critical power",
+    summary:
+      "UPS, storage, generation, and transfer systems for continuous, stable supply where interruption is not an option.",
+  },
+  {
+    id: "building-electrical",
+    title: "Building electrical",
+    summary:
+      "Design through commissioning for safe, efficient, code-compliant power distribution and lighting.",
+  },
+  {
+    id: "safety",
+    title: "Safety & compliance",
+    summary:
+      "Inspection, certification, earthing, surge, and lightning protection grounded in applicable standards.",
+  },
+  {
+    id: "maintenance",
+    title: "Operations & maintenance",
+    summary:
+      "Preventive and corrective programmes that protect assets, performance, and uptime after handover.",
+  },
+] as const;
+
+export const approachSteps = [
+  {
+    title: "Diagnose",
+    body: "Clarify loads, constraints, risk, and compliance requirements before proposing hardware.",
+  },
+  {
+    title: "Engineer",
+    body: "Produce designs that balance energy yield, resilience, budget, and future expansion.",
+  },
+  {
+    title: "Deliver",
+    body: "Install, test, and commission to professional standards with documented verification.",
+  },
+  {
+    title: "Sustain",
+    body: "Maintain performance through structured O&M, monitoring, and responsive support.",
+  },
 ] as const;
 
 export const solarServices = [
@@ -105,24 +158,24 @@ export const maintenanceServices = [
 
 export const whyChooseUs = [
   {
-    title: "Qualified Engineering Team",
-    body: "Projects delivered by experienced engineers and technicians committed to excellence.",
+    title: "Qualified engineering team",
+    body: "Projects delivered by experienced engineers and technicians accountable for technical outcomes.",
   },
   {
-    title: "Quality Assurance",
-    body: "Quality products from trusted manufacturers and industry best practices.",
+    title: "Quality assurance",
+    body: "Trusted manufacturers and disciplined execution — not commodity shortcuts.",
   },
   {
-    title: "Tailored Solutions",
-    body: "Every project designed around technical requirements, budget, and future growth.",
+    title: "Tailored solutions",
+    body: "Scope shaped around technical requirements, budget discipline, and growth plans.",
   },
   {
-    title: "Safety First",
-    body: "Safety and compliance integrated into every stage of project execution.",
+    title: "Safety first",
+    body: "Compliance and risk control integrated from design through maintenance.",
   },
   {
-    title: "Reliable Support",
-    body: "Responsive technical support and maintenance long after installation.",
+    title: "Reliable support",
+    body: "A continuing technical relationship after commissioning — not a one-off handover.",
   },
 ] as const;
 

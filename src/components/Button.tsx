@@ -5,12 +5,13 @@ import type {
 } from "react";
 
 const base =
-  "inline-flex min-h-11 items-center justify-center rounded-2xl px-5 py-3 font-display text-sm font-semibold tracking-wide transition-[box-shadow,transform,color,background-color] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neu-accent disabled:cursor-not-allowed disabled:opacity-60 xs:px-6";
+  "inline-flex min-h-11 items-center justify-center rounded-sm px-5 py-2.5 font-display text-sm font-semibold tracking-wide transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants = {
-  primary:
-    "bg-neu-accent text-white shadow-[6px_6px_14px_#b8c2cf,-6px_-6px_14px_#f5f8fc] hover:bg-neu-accent-deep active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.25)]",
-  soft: "neu-raised-sm text-neu-text hover:text-neu-accent active:neu-pressed",
+  primary: "bg-accent text-white hover:bg-accent-deep",
+  secondary:
+    "border border-border-strong bg-bg-elevated text-ink hover:border-accent hover:text-accent",
+  ghost: "text-accent hover:bg-bg-muted",
 } as const;
 
 type Variant = keyof typeof variants;
@@ -21,13 +22,13 @@ type Shared = {
   className?: string;
 };
 
-type NeuButtonAsButton = Shared &
+type ButtonAsButton = Shared &
   ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
 
-type NeuButtonAsLink = Shared &
+type ButtonAsLink = Shared &
   AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
-export function NeuButton(props: NeuButtonAsButton | NeuButtonAsLink) {
+export function Button(props: ButtonAsButton | ButtonAsLink) {
   const { children, variant = "primary", className = "", ...rest } = props;
   const classes = `${base} ${variants[variant]} ${className}`;
 

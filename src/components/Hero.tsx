@@ -1,82 +1,87 @@
 import { company } from "@/lib/content";
-import { NeuButton } from "@/components/NeuButton";
+import { Button } from "@/components/Button";
 
 export function Hero() {
   return (
     <section
       id="top"
       aria-labelledby="hero-heading"
-      className="safe-px xs:pt-8 xs:pb-14 relative overflow-hidden pt-6 pb-12 sm:pt-12 sm:pb-16 md:pt-14 lg:pb-24"
+      className="safe-px border-border relative overflow-hidden border-b"
     >
       <div
         aria-hidden="true"
-        className="animate-glow-pulse pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(201,138,46,0.18),transparent_45%),radial-gradient(ellipse_at_80%_10%,rgba(15,107,107,0.2),transparent_40%),radial-gradient(ellipse_at_70%_80%,rgba(15,107,107,0.12),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(165deg,#eef2f5_0%,#f3f5f7_42%,#e7eef0_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 w-full max-w-xl bg-[radial-gradient(ellipse_at_80%_30%,rgba(12,95,95,0.12),transparent_55%),radial-gradient(ellipse_at_70%_80%,rgba(168,111,24,0.1),transparent_50%)] md:w-1/2"
       />
 
-      <div className="xs:gap-10 relative mx-auto grid min-h-[min(78vh,920px)] max-w-6xl items-center gap-8 md:min-h-[70vh] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-12">
-        <div className="animate-rise max-w-xl">
-          <p className="text-neu-accent font-display xs:text-xs text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
-            Solar &amp; electrical engineering
+      <div className="relative mx-auto grid min-h-[min(82vh,880px)] max-w-6xl items-center gap-10 py-14 sm:py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 lg:py-24">
+        <div className="animate-fade max-w-2xl">
+          <p className="font-display text-accent text-[0.7rem] font-semibold tracking-[0.2em] uppercase sm:text-xs">
+            Power systems engineering
           </p>
           <h1
             id="hero-heading"
-            className="font-display text-neu-text mt-3 text-[clamp(1.75rem,6vw,3.75rem)] leading-[1.1] font-bold tracking-tight text-balance"
+            className="font-display text-ink mt-4 text-[clamp(2rem,6.2vw,3.65rem)] leading-[1.08] font-bold tracking-tight text-balance"
           >
             {company.name}
           </h1>
-          <p className="font-display text-neu-accent xs:mt-5 mt-4 text-[clamp(1.05rem,2.8vw,1.5rem)] leading-snug font-semibold text-pretty">
+          <p className="font-display text-accent mt-5 text-[clamp(1.05rem,2.6vw,1.35rem)] leading-snug font-semibold text-pretty">
             {company.tagline}
           </p>
-          <p className="text-neu-muted xs:mt-5 mt-4 max-w-lg text-[clamp(0.95rem,2.4vw,1.125rem)] leading-relaxed text-pretty">
-            End-to-end solar and electrical engineering — from concept, design,
-            and installation to testing, commissioning, and long-term
-            maintenance for homes, businesses, industries, and institutions.
+          <p className="text-muted mt-5 max-w-xl text-[clamp(0.98rem,2.2vw,1.125rem)] leading-relaxed text-pretty">
+            {company.positioning}
+          </p>
+          <p className="text-ink mt-4 text-sm font-medium tracking-wide">
+            {company.proofLine}
           </p>
           <div
-            className="xs:mt-8 xs:flex-row xs:flex-wrap xs:gap-4 mt-6 flex flex-col gap-3"
+            className="xs:flex-row xs:flex-wrap mt-8 flex flex-col gap-3"
             role="group"
             aria-label="Primary calls to action"
           >
-            <NeuButton href="#services" className="xs:w-auto w-full">
-              Explore services
-            </NeuButton>
-            <NeuButton
-              href="#contact"
-              variant="soft"
+            <Button href="#contact" className="xs:w-auto w-full">
+              Request consultation
+            </Button>
+            <Button
+              href="#capabilities"
+              variant="secondary"
               className="xs:w-auto w-full"
             >
-              Talk to an engineer
-            </NeuButton>
+              View capabilities
+            </Button>
           </div>
         </div>
 
         <aside
-          className="animate-rise-delay relative mx-auto w-full max-w-md lg:max-w-none"
-          aria-labelledby="hero-panel-title"
+          className="animate-fade-delay border-border bg-bg-elevated border p-6 sm:p-8"
+          aria-labelledby="hero-aside-title"
         >
-          <div className="neu-inset xs:max-h-none xs:rounded-[2.5rem] xs:p-6 relative aspect-square max-h-[min(100vw-2rem,28rem)] overflow-hidden rounded-[1.75rem] p-4 sm:p-8 md:aspect-[4/3] lg:aspect-square">
-            <div
-              aria-hidden="true"
-              className="animate-float xs:inset-6 xs:rounded-[2rem] absolute inset-4 rounded-[1.5rem] bg-[conic-gradient(from_210deg_at_50%_50%,rgba(201,138,46,0.35),rgba(15,107,107,0.45),rgba(221,227,234,0.2),rgba(201,138,46,0.35))] opacity-80 blur-[1px]"
-            />
-            <div className="neu-raised xs:rounded-[1.75rem] xs:p-6 relative flex h-full flex-col justify-between rounded-[1.25rem] p-4 sm:p-8">
-              <div>
-                <p className="font-display text-neu-sun xs:text-xs text-[0.65rem] font-semibold tracking-[0.2em] uppercase">
-                  Power systems
-                </p>
-                <p
-                  id="hero-panel-title"
-                  className="font-display text-neu-text xs:mt-3 mt-2 text-[clamp(1.15rem,3vw,1.875rem)] font-bold text-balance"
-                >
-                  Solar. Critical power. Building electrical.
-                </p>
-              </div>
-              <p className="text-neu-muted text-sm leading-relaxed text-pretty">
-                Reliable, efficient, and sustainable installations engineered to
-                professional and regulatory standards.
-              </p>
-            </div>
-          </div>
+          <p className="font-display text-sun text-[0.65rem] font-semibold tracking-[0.18em] uppercase">
+            Focus
+          </p>
+          <h2
+            id="hero-aside-title"
+            className="font-display text-ink mt-3 text-xl font-bold text-balance sm:text-2xl"
+          >
+            Serious power infrastructure for serious operations.
+          </h2>
+          <ul
+            className="text-muted mt-6 space-y-3 text-sm leading-relaxed"
+            role="list"
+          >
+            <li className="border-border border-l-accent border-l-2 pl-3">
+              Solar generation engineered for measurable performance
+            </li>
+            <li className="border-border border-l-accent border-l-2 pl-3">
+              Critical power continuity for mission-critical sites
+            </li>
+            <li className="border-border border-l-accent border-l-2 pl-3">
+              Safety, compliance, and lifecycle support built in
+            </li>
+          </ul>
         </aside>
       </div>
     </section>
