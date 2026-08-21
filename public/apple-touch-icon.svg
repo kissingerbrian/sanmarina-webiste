@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="San Marina Engineering">
+  <rect width="180" height="180" rx="36" fill="#dde3ea"/>
+  <circle cx="90" cy="90" r="52" fill="#0f6b6b"/>
+  <path d="M90 48v84M54 90h72" stroke="#f5f8fc" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="132" cy="48" r="18" fill="#c98a2e"/>
+</svg>

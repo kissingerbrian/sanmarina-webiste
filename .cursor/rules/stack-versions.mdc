@@ -1,0 +1,26 @@
+---
+description: Pinned stack versions — Next.js, React, Tailwind. Always apply.
+alwaysApply: true
+---
+
+# Locked dependency versions
+
+These versions are **mandatory**. Do not upgrade, downgrade, or substitute them.
+
+| Package | Exact version |
+|---------|---------------|
+| `next` | **16.3.0** |
+| `react` | **19.2.8** |
+| `react-dom` | **19.2.8** |
+| `tailwindcss` | **4.3.3** |
+| `@tailwindcss/postcss` | **4.3.3** |
+| `eslint-config-next` | **16.3.0** |
+
+## Rules
+
+- Pin exact versions in `package.json` (no `^` / `~` on the packages above).
+- Never run `npm install next@latest` or similar for these packages.
+- If a new dependency conflicts with these versions, resolve without changing the locked stack.
+- This is a **static** Next.js site (`output: "export"`). Do not add server-only APIs, Route Handlers that require a Node server, or features incompatible with static export.
+- UI style: **neumorphism** (soft UI). Keep visual language consistent across pages.
+- Before writing Next.js APIs, read guides under `node_modules/next/dist/docs/` — this Next.js version may differ from training data.

@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# San Marina Engineering Limited
 
-## Getting Started
+Static marketing website for **San Marina Engineering Limited** — solar energy, critical power, building electrical, safety & compliance, and operations & maintenance.
 
-First, run the development server:
+Built with a neumorphic UI, strong SEO, and accessibility-first markup.
+
+## Stack (locked)
+
+| Package           | Version |
+| ----------------- | ------- |
+| Next.js           | 16.3.0  |
+| React / React DOM | 19.2.8  |
+| Tailwind CSS      | 4.3.3   |
+
+Do not change these versions without an explicit project decision. See `.cursor/rules/stack-versions.mdc`.
+
+## Features
+
+- Static export (`output: "export"`) — deploy the `out/` folder to any static host
+- Neumorphic design system (soft raised/inset surfaces)
+- SEO: metadata, Open Graph, JSON-LD, `sitemap.xml`, `robots.txt`, web manifest
+- Accessibility: skip link, landmarks, ARIA labels, keyboard-friendly mobile nav, reduced-motion support
+- Responsive layout from narrow phones through large desktops (includes `xs` breakpoint)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command                | Description                       |
+| ---------------------- | --------------------------------- |
+| `npm run dev`          | Start the development server      |
+| `npm run build`        | Production static build → `out/`  |
+| `npm run start`        | Serve the production build (Node) |
+| `npm run lint`         | Run ESLint                        |
+| `npm run lint:fix`     | Run ESLint with autofix           |
+| `npm run format`       | Format with Prettier              |
+| `npm run format:check` | Check Prettier formatting         |
+| `npm run check`        | Lint + format check               |
 
-## Learn More
+After any code change in this repo, agents must run:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run format
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+src/
+  app/           # App Router pages, layout, globals, sitemap, robots
+  components/    # UI (header, hero, services, footer, neu primitives)
+  lib/           # Content + SEO helpers
+.cursor/rules/   # Mandatory agent rules (versions, lint/format, design)
+public/          # Icons, OG image, web manifest
+```
 
-## Deploy on Vercel
+## Configuration notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Site URL and contact email live in `src/lib/seo.ts` (`siteConfig`) — update before production deploy.
+- ESLint uses `eslint-config-next` plus Prettier compatibility.
+- Prettier uses `prettier-plugin-tailwindcss` for class sorting.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+Private project for San Marina Engineering Limited.

@@ -1,0 +1,163 @@
+export const siteConfig = {
+  name: "San Marina Engineering Limited",
+  shortName: "San Marina Engineering",
+  url: "https://www.sanmarina.engineering",
+  locale: "en_US",
+  language: "en",
+  email: "info@sanmarina.engineering",
+  tagline: "Engineering Reliable Power. Building a Sustainable Future.",
+  description:
+    "San Marina Engineering Limited delivers solar energy, critical power, building electrical, safety compliance, and operations & maintenance services for residential, commercial, industrial, and institutional clients.",
+  keywords: [
+    "San Marina Engineering",
+    "solar energy solutions",
+    "solar PV installation",
+    "electrical engineering",
+    "critical power systems",
+    "UPS systems",
+    "battery energy storage",
+    "BESS",
+    "building electrical design",
+    "electrical safety inspection",
+    "lightning protection",
+    "earthing and grounding",
+    "solar water pumping",
+    "hybrid solar systems",
+    "grid-tied solar",
+    "off-grid solar",
+    "generator systems",
+    "ATS systems",
+    "power quality",
+    "electrical maintenance",
+    "AMC electrical",
+    "sustainable power",
+  ],
+} as const;
+
+export function buildJsonLd() {
+  const { name, url, email, description, tagline, shortName } = siteConfig;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${url}/#organization`,
+        name,
+        alternateName: shortName,
+        url,
+        email,
+        description,
+        slogan: tagline,
+        areaServed: "Worldwide",
+        knowsAbout: [
+          "Solar photovoltaic systems",
+          "Critical power engineering",
+          "Building electrical services",
+          "Electrical safety and compliance",
+          "Operations and maintenance",
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          email,
+          availableLanguage: ["English"],
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${url}/#website`,
+        url,
+        name,
+        description,
+        publisher: { "@id": `${url}/#organization` },
+        inLanguage: "en",
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${url}/#webpage`,
+        url,
+        name: `${name} | Solar & Electrical Engineering`,
+        isPartOf: { "@id": `${url}/#website` },
+        about: { "@id": `${url}/#organization` },
+        description,
+        inLanguage: "en",
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${url}/og.svg`,
+        },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${url}/#service`,
+        name,
+        url,
+        image: `${url}/og.svg`,
+        description,
+        email,
+        priceRange: "$$",
+        serviceType: [
+          "Solar Energy Solutions",
+          "Critical Power Solutions",
+          "Building Electrical Services",
+          "Electrical Safety & Compliance",
+          "Operations & Maintenance",
+        ],
+        provider: { "@id": `${url}/#organization` },
+        areaServed: {
+          "@type": "Place",
+          name: "Global",
+        },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${url}/#services-list`,
+        name: "Engineering services",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Solar Energy Solutions",
+            url: `${url}/#solar`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Critical Power Solutions",
+            url: `${url}/#critical-power`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Building Electrical Services",
+            url: `${url}/#building-electrical`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: "Electrical Safety & Compliance",
+            url: `${url}/#safety`,
+          },
+          {
+            "@type": "ListItem",
+            position: 5,
+            name: "Operations & Maintenance",
+            url: `${url}/#maintenance`,
+          },
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: url,
+          },
+        ],
+      },
+    ],
+  };
+}

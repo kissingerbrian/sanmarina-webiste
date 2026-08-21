@@ -1,0 +1,34 @@
+---
+description: MUST run ESLint and Prettier after every project change. Always apply.
+alwaysApply: true
+---
+
+# Lint and format after every change (mandatory)
+
+After **every** edit to any file in this project (code, config, styles, markdown, rules), the agent **MUST** run both the linter and the formatter before ending the turn.
+
+## Required commands (in order)
+
+```bash
+npm run format
+npm run lint
+```
+
+If `npm run lint` reports errors, fix them, then run both commands again until clean.
+
+## Scripts (defined in package.json)
+
+| Script | Purpose |
+|--------|---------|
+| `npm run format` | Prettier write |
+| `npm run format:check` | Prettier check (CI) |
+| `npm run lint` | ESLint |
+| `npm run lint:fix` | ESLint with `--fix` |
+| `npm run check` | lint + format:check |
+
+## Hard requirements
+
+- Do **not** skip lint/format because a change was "small", "config-only", or "CSS-only".
+- Do **not** leave the session with failing lint or unformatted files.
+- Prefer `npm run lint:fix` only when autofix is safe; always re-run `npm run lint` after.
+- Do not disable ESLint/Prettier rules to silence issues without an explicit user request.

@@ -1,69 +1,133 @@
-import Image from "next/image";
+import {
+  buildingElectricalServices,
+  criticalPowerApplications,
+  criticalPowerServices,
+  maintenanceServices,
+  safetyServices,
+  solarBenefits,
+  solarServices,
+} from "@/lib/content";
+import { ContactSection, SiteFooter } from "@/components/SiteFooter";
+import { Hero } from "@/components/Hero";
+import { ServicePanel } from "@/components/ServicePanel";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Industries, WhyChoose } from "@/components/WhyChoose";
+import { NeuSurface } from "@/components/NeuSurface";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <SiteHeader />
+      <main
+        id="main-content"
+        className="flex-1"
+        tabIndex={-1}
+        aria-label="San Marina Engineering main content"
+      >
+        <Hero />
+
+        <section
+          id="services"
+          className="safe-px xs:py-8 scroll-mt-[max(6rem,calc(env(safe-area-inset-top)+5rem))] py-6"
+          aria-labelledby="services-overview-heading"
+          aria-describedby="services-overview-intro"
+        >
+          <div className="mx-auto max-w-6xl">
+            <NeuSurface
+              variant="inset"
+              className="xs:p-6 p-4 sm:p-8"
+              role="region"
+            >
+              <h2
+                id="services-overview-heading"
+                className="font-display text-neu-text text-[clamp(1.35rem,3.5vw,1.875rem)] font-bold text-balance"
+              >
+                Our services
+              </h2>
+              <p
+                id="services-overview-intro"
+                className="text-neu-muted mt-3 max-w-2xl text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
+              >
+                Comprehensive solar energy, critical power, building electrical,
+                safety &amp; compliance, and operations &amp; maintenance —
+                delivered end-to-end from design through long-term support.
+              </p>
+              <nav className="mt-5" aria-label="Service categories">
+                <ul className="flex flex-wrap gap-2" role="list">
+                  {[
+                    { href: "#solar", label: "Solar energy" },
+                    { href: "#critical-power", label: "Critical power" },
+                    {
+                      href: "#building-electrical",
+                      label: "Building electrical",
+                    },
+                    { href: "#safety", label: "Safety & compliance" },
+                    { href: "#maintenance", label: "Operations & maintenance" },
+                  ].map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        className="neu-raised-sm text-neu-text hover:text-neu-accent focus-visible:outline-neu-accent xs:text-sm inline-flex min-h-10 items-center rounded-2xl px-3 py-2 text-xs font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </NeuSurface>
+          </div>
+        </section>
+
+        <ServicePanel
+          id="solar"
+          title="Solar energy solutions"
+          intro="Harness the sun with innovative solar energy systems designed to reduce energy costs while providing reliable, sustainable power for homes, businesses, industries, institutions, farms, and community projects."
+          items={solarServices}
+          asideTitle="Why choose our solar solutions?"
+          asideItems={solarBenefits}
+          listLabel="Solar energy services"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <ServicePanel
+          id="critical-power"
+          title="Critical power solutions"
+          intro="Power interruptions and poor power quality can damage equipment and halt operations. We design and implement critical power systems that ensure continuous, stable, high-quality power for mission-critical applications."
+          items={criticalPowerServices}
+          asideTitle="Applications"
+          asideItems={criticalPowerApplications}
+          listLabel="Critical power services"
+        />
+
+        <ServicePanel
+          id="building-electrical"
+          title="Building electrical services"
+          intro="Complete building electrical engineering from planning and design through installation and commissioning. We partner with architects, developers, consultants, and contractors to deliver safe, efficient, code-compliant systems."
+          items={buildingElectricalServices}
+          listLabel="Building electrical services"
+        />
+
+        <ServicePanel
+          id="safety"
+          title="Electrical safety & compliance"
+          intro="Safety is central to every installation. Our inspections and protection systems identify hidden defects before they become hazards, protecting people and property while verifying regulatory compliance."
+          items={safetyServices}
+          listLabel="Electrical safety and compliance services"
+        />
+
+        <ServicePanel
+          id="maintenance"
+          title="Operations & maintenance"
+          intro="Reliable systems need professional maintenance. Our programmes maximize equipment lifespan, improve performance, reduce downtime, and protect your investment — available as one-time visits or annual maintenance contracts (AMCs)."
+          items={maintenanceServices}
+          listLabel="Operations and maintenance services"
+        />
+
+        <WhyChoose />
+        <Industries />
+        <ContactSection />
       </main>
-    </div>
+      <SiteFooter />
+    </>
   );
 }
