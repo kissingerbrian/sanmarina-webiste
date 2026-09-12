@@ -1,3 +1,10 @@
+import Image from "next/image";
+
+type ServiceImage = {
+  src: string;
+  alt: string;
+};
+
 type ServiceDetailProps = {
   id: string;
   title: string;
@@ -5,6 +12,7 @@ type ServiceDetailProps = {
   items: readonly string[];
   asideTitle?: string;
   asideItems?: readonly string[];
+  image?: ServiceImage;
 };
 
 export function ServiceDetail({
@@ -14,6 +22,7 @@ export function ServiceDetail({
   items,
   asideTitle,
   asideItems,
+  image,
 }: ServiceDetailProps) {
   const headingId = `${id}-heading`;
   const introId = `${id}-intro`;
@@ -51,6 +60,17 @@ export function ServiceDetail({
                   ))}
                 </ul>
               </div>
+            ) : null}
+            {image ? (
+              <figure className="border-border relative mt-8 aspect-[4/3] overflow-hidden border">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </figure>
             ) : null}
           </header>
 

@@ -1,4 +1,5 @@
-import { industries, whyChooseUs } from "@/lib/content";
+import Image from "next/image";
+import { industries, industryList, whyChooseUs } from "@/lib/content";
 import { Panel } from "@/components/Panel";
 
 export function Standards() {
@@ -95,15 +96,50 @@ export function Industries() {
           </h2>
           <p id="industries-intro" className="text-muted mt-3 text-pretty">
             Sector experience across facilities where power quality, safety, and
-            uptime matter.
+            uptime matter — shown through the environments we actually work in.
           </p>
         </header>
+
         <ul
-          className="border-border mt-8 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           role="list"
-          aria-label="Industries served"
+          aria-label="Industry panels"
         >
           {industries.map((industry) => (
+            <li key={industry.title}>
+              <article className="border-border group relative min-h-[15rem] overflow-hidden border">
+                <Image
+                  src={industry.image.src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  aria-hidden="true"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,28,36,0.9)_0%,rgba(15,28,36,0.4)_55%,rgba(15,28,36,0.15)_100%)]"
+                />
+                <div className="relative flex h-full min-h-[15rem] flex-col justify-end p-5">
+                  <h3 className="font-display text-lg font-semibold text-white">
+                    {industry.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-pretty text-white/85">
+                    {industry.summary}
+                  </p>
+                </div>
+                <span className="sr-only">{industry.image.alt}</span>
+              </article>
+            </li>
+          ))}
+        </ul>
+
+        <ul
+          className="border-border mt-10 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3"
+          role="list"
+          aria-label="Full industry list"
+        >
+          {industryList.map((industry) => (
             <li
               key={industry}
               className="border-border text-ink flex min-h-12 items-center border-b px-1 py-3 text-sm sm:px-3"

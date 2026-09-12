@@ -12,10 +12,50 @@ export const company = {
 
 export const navLinks = [
   { href: "#capabilities", label: "Capabilities" },
+  { href: "#projects", label: "Projects" },
   { href: "#approach", label: "Approach" },
   { href: "#industries", label: "Industries" },
   { href: "#contact", label: "Contact" },
 ] as const;
+
+export const siteImages = {
+  rooftopSolarCrew: {
+    src: "/images/rooftop-solar-crew.jpg",
+    alt: "San Marina crew installing a large commercial rooftop solar array under clear Kenyan sky",
+  },
+  westernFresh: {
+    src: "/images/western-fresh-industries.jpg",
+    alt: "Western Fresh Industries sunflower processing facility in Kisumu with rooftop solar array",
+  },
+  distributionBoardOpen: {
+    src: "/images/distribution-board-open.jpg",
+    alt: "Open electrical distribution board showing busbars, meters, and circuit protection",
+  },
+  distributionBoardWiring: {
+    src: "/images/distribution-board-wiring.jpg",
+    alt: "Interior of a commissioned distribution board with organised power wiring",
+  },
+  distributionBoardDetail: {
+    src: "/images/distribution-board-detail.jpg",
+    alt: "Detail of an open multi-compartment distribution board on a concrete wall",
+  },
+  distributionBoardClosed: {
+    src: "/images/distribution-board-closed.jpg",
+    alt: "Closed distribution board with status indicator lights after installation",
+  },
+  siteDriveInstall: {
+    src: "/images/site-drive-install.jpg",
+    alt: "Industrial drive and protection equipment installed on site with cable trunking",
+  },
+  driveProtectionDetail: {
+    src: "/images/drive-protection-detail.jpg",
+    alt: "Close view of installed drive controller and protection enclosure",
+  },
+  cablingThroughPit: {
+    src: "/images/cabling-through-pit.jpg",
+    alt: "Power and control cabling routed through an underground pit during site installation",
+  },
+} as const;
 
 export const capabilities = [
   {
@@ -23,30 +63,78 @@ export const capabilities = [
     title: "Solar energy",
     summary:
       "Engineered PV and hybrid systems sized for yield, reliability, and the client's operational reality.",
+    image: siteImages.rooftopSolarCrew,
   },
   {
     id: "critical-power",
     title: "Critical power",
     summary:
       "UPS, storage, generation, and transfer systems for continuous, stable supply where interruption is not an option.",
+    image: siteImages.siteDriveInstall,
   },
   {
     id: "building-electrical",
     title: "Building electrical",
     summary:
       "Design through commissioning for safe, efficient, code-compliant power distribution and lighting.",
+    image: siteImages.distributionBoardClosed,
   },
   {
     id: "safety",
     title: "Safety & compliance",
     summary:
       "Inspection, certification, earthing, surge, and lightning protection grounded in applicable standards.",
+    image: siteImages.distributionBoardOpen,
   },
   {
     id: "maintenance",
     title: "Operations & maintenance",
     summary:
       "Preventive and corrective programmes that protect assets, performance, and uptime after handover.",
+    image: siteImages.driveProtectionDetail,
+  },
+] as const;
+
+export const featuredProjects = [
+  {
+    id: "western-fresh",
+    title: "Western Fresh Industries",
+    location: "Kisumu, Kenya",
+    category: "Commercial solar & electrical",
+    summary:
+      "Commercial solar and electrical works for a sunflower processing facility — generation on the roof, disciplined distribution on the ground.",
+    image: siteImages.westernFresh,
+    featured: true,
+  },
+  {
+    id: "rooftop-array",
+    title: "Commercial rooftop solar",
+    location: "Kenya",
+    category: "Solar PV installation",
+    summary:
+      "Large-format rooftop array delivered by an on-site engineering and installation team.",
+    image: siteImages.rooftopSolarCrew,
+    featured: false,
+  },
+  {
+    id: "distribution-works",
+    title: "Distribution board works",
+    location: "Kenya",
+    category: "Building electrical",
+    summary:
+      "Metering, protection, and organised distribution for safe, inspectable power infrastructure.",
+    image: siteImages.distributionBoardWiring,
+    featured: false,
+  },
+  {
+    id: "site-cabling",
+    title: "Site cabling through pit",
+    location: "Kenya",
+    category: "Electrical infrastructure",
+    summary:
+      "Power and control cabling routed through an underground pit — the hidden work that makes installations durable and maintainable.",
+    image: siteImages.cablingThroughPit,
+    featured: false,
   },
 ] as const;
 
@@ -180,6 +268,39 @@ export const whyChooseUs = [
 ] as const;
 
 export const industries = [
+  {
+    title: "Industrial facilities",
+    summary: "Power infrastructure for demanding production environments.",
+    image: siteImages.westernFresh,
+  },
+  {
+    title: "Commercial buildings",
+    summary: "Energy systems designed around business operations.",
+    image: siteImages.rooftopSolarCrew,
+  },
+  {
+    title: "Agricultural operations",
+    summary: "Solar, pumping, and electrical solutions for productive sites.",
+    image: siteImages.siteDriveInstall,
+  },
+  {
+    title: "Institutions & campuses",
+    summary: "Reliable electrical and backup power for critical facilities.",
+    image: siteImages.distributionBoardClosed,
+  },
+  {
+    title: "Infrastructure cabling",
+    summary: "Routed power and control cabling built for longevity.",
+    image: siteImages.cablingThroughPit,
+  },
+  {
+    title: "Safety-critical sites",
+    summary: "Inspection-ready distribution and protection systems.",
+    image: siteImages.distributionBoardOpen,
+  },
+] as const;
+
+export const industryList = [
   "Residential Developments",
   "Commercial Buildings",
   "Industrial Facilities",

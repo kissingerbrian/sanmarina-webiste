@@ -55,3 +55,7 @@ next-env.d.ts
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+
+
+# MD FILES
+san-marina-website-recommended-changes.md

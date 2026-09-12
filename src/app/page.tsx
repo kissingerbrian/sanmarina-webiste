@@ -4,10 +4,12 @@ import {
   criticalPowerServices,
   maintenanceServices,
   safetyServices,
+  siteImages,
   solarBenefits,
   solarServices,
 } from "@/lib/content";
 import { Approach, CapabilitiesOverview } from "@/components/Capabilities";
+import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { ContactSection, SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
 import { ServiceDetail } from "@/components/ServiceDetail";
@@ -26,6 +28,7 @@ export default function Home() {
       >
         <Hero />
         <CapabilitiesOverview />
+        <FeaturedProjects />
         <Approach />
 
         <div
@@ -38,7 +41,7 @@ export default function Home() {
             </h2>
             <p className="text-muted mt-2 max-w-2xl text-sm text-pretty sm:text-base">
               Full service coverage for scoping discussions — structured by
-              discipline.
+              discipline, illustrated with work from our sites.
             </p>
           </div>
 
@@ -49,6 +52,7 @@ export default function Home() {
             items={solarServices}
             asideTitle="Engagement standards"
             asideItems={solarBenefits}
+            image={siteImages.rooftopSolarCrew}
           />
 
           <ServiceDetail
@@ -58,13 +62,15 @@ export default function Home() {
             items={criticalPowerServices}
             asideTitle="Typical applications"
             asideItems={criticalPowerApplications}
+            image={siteImages.siteDriveInstall}
           />
 
           <ServiceDetail
             id="building-electrical"
             title="Building electrical services"
-            intro="Complete building electrical engineering from planning and design through installation and commissioning — coordinated with architects, developers, consultants, and contractors."
+            intro="Complete building electrical engineering from planning and design through installation and commissioning — including distribution, cable management, and cabling routed through site pits where the infrastructure demands it."
             items={buildingElectricalServices}
+            image={siteImages.cablingThroughPit}
           />
 
           <ServiceDetail
@@ -72,6 +78,7 @@ export default function Home() {
             title="Electrical safety & compliance"
             intro="Testing, inspection, certification, and protection systems that identify defects before they become hazards — safeguarding people and property."
             items={safetyServices}
+            image={siteImages.distributionBoardOpen}
           />
 
           <ServiceDetail
@@ -79,6 +86,7 @@ export default function Home() {
             title="Operations & maintenance"
             intro="Maintenance programmes that extend equipment life, improve performance, reduce downtime, and protect investment — as one-time visits or annual contracts."
             items={maintenanceServices}
+            image={siteImages.distributionBoardClosed}
           />
         </div>
 

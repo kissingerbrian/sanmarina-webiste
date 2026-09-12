@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { approachSteps, capabilities } from "@/lib/content";
 import { Panel } from "@/components/Panel";
 
@@ -30,31 +31,62 @@ export function CapabilitiesOverview() {
         </header>
 
         <ul
-          className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-6"
           role="list"
           aria-label="Capability pillars"
         >
-          {capabilities.map((item, index) => (
-            <li key={item.id} className={index === 4 ? "lg:col-span-1" : ""}>
-              <a
-                href={`#${item.id}`}
-                className="border-border bg-bg-elevated hover:border-accent focus-visible:outline-accent block h-full border p-5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:p-6"
+          {capabilities.map((item, index) => {
+            const wide = index < 2;
+            return (
+              <li
+                key={item.id}
+                className={wide ? "lg:col-span-3" : "lg:col-span-2"}
               >
-                <span className="font-display text-accent text-xs font-semibold tracking-wider">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-display text-ink mt-3 text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
-                  {item.summary}
-                </p>
-                <span className="text-accent mt-4 inline-block text-sm font-medium">
-                  View detail
-                </span>
-              </a>
-            </li>
-          ))}
+                <a
+                  href={`#${item.id}`}
+                  className="border-border group focus-visible:outline-accent relative block h-full min-h-[16.5rem] overflow-hidden border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:min-h-[18rem]"
+                >
+                  <Image
+                    src={item.image.src}
+                    alt=""
+                    fill
+                    sizes={
+                      wide
+                        ? "(max-width: 1024px) 100vw, 50vw"
+                        : "(max-width: 1024px) 50vw, 33vw"
+                    }
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    aria-hidden="true"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,28,36,0.92)_0%,rgba(15,28,36,0.45)_55%,rgba(15,28,36,0.15)_100%)]"
+                  />
+                  <div className="relative flex h-full min-h-[16.5rem] flex-col justify-end p-5 sm:min-h-[18rem] sm:p-6">
+                    <span className="font-display text-xs font-semibold tracking-wider text-teal-100/90">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display mt-2 text-lg font-semibold text-white sm:text-xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-pretty text-white/85">
+                      {item.summary}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-100">
+                      View detail
+                      <span
+                        aria-hidden="true"
+                        className="transition-transform group-hover:translate-x-0.5"
+                      >
+                        →
+                      </span>
+                    </span>
+                  </div>
+                  <span className="sr-only">{item.image.alt}</span>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
