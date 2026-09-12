@@ -1,5 +1,6 @@
 import { company, navLinks } from "@/lib/content";
 import { siteConfig } from "@/lib/seo";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Button } from "@/components/Button";
 import { Panel } from "@/components/Panel";
 
@@ -22,14 +23,15 @@ export function ContactSection() {
                 id="contact-heading"
                 className="font-display text-ink mt-3 text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
               >
-                Start a serious conversation about your power systems.
+                Let’s talk about your power needs.
               </h2>
               <p
                 id="contact-intro"
                 className="text-muted mt-3 max-w-xl text-[clamp(0.95rem,2.1vw,1.05rem)] leading-relaxed text-pretty"
               >
-                New project, upgrade, or engineering advisory — {company.name}{" "}
-                is ready to assess scope with clarity and technical discipline.
+                New solar system, backup power, or an electrical upgrade —{" "}
+                {company.shortName} is ready to visit your site and map a clear
+                next step.
               </p>
               <div
                 className="xs:flex-row xs:flex-wrap mt-8 flex flex-col gap-3"
@@ -41,14 +43,14 @@ export function ContactSection() {
                   className="xs:w-auto w-full"
                   aria-label={`Email ${company.name} at ${siteConfig.email}`}
                 >
-                  Email our team
+                  Request a site assessment
                 </Button>
                 <Button
                   href="#capabilities"
                   variant="secondary"
                   className="xs:w-auto w-full"
                 >
-                  Review capabilities
+                  Browse solutions
                 </Button>
               </div>
               <p className="text-muted mt-5 text-sm">
@@ -63,16 +65,17 @@ export function ContactSection() {
             </div>
 
             <aside
-              className="bg-bg-muted border-border border p-6"
+              className="bg-bg-muted flex flex-col items-start gap-4 rounded-xl border border-transparent p-6"
               aria-label="Company summary"
             >
+              <BrandLogo size="footer" />
               <p className="font-display text-ink text-base font-semibold text-balance">
                 {company.name}
               </p>
-              <p className="text-muted mt-3 text-sm leading-relaxed text-pretty">
+              <p className="text-muted text-sm leading-relaxed text-pretty">
                 {company.tagline}
               </p>
-              <p className="text-muted mt-4 text-sm">{company.proofLine}</p>
+              <p className="text-muted text-sm">{company.proofLine}</p>
             </aside>
           </div>
         </Panel>
@@ -87,20 +90,27 @@ export function SiteFooter() {
   return (
     <footer
       role="contentinfo"
-      className="safe-px border-border bg-bg-elevated border-t pt-8 pb-[max(2rem,env(safe-area-inset-bottom))]"
+      className="safe-px border-border bg-bg-elevated border-t pt-10 pb-[max(2.5rem,env(safe-area-inset-bottom))]"
       aria-labelledby="footer-heading"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-6">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
+      <div className="mx-auto flex max-w-6xl flex-col gap-8">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+          <div className="max-w-md">
+            <a
+              href="#top"
+              className="focus-visible:outline-accent inline-flex rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              aria-label={`${company.name} — back to top`}
+            >
+              <BrandLogo size="footer" />
+            </a>
             <h2
               id="footer-heading"
-              className="font-display text-ink text-sm font-semibold"
+              className="font-display text-ink mt-4 text-base font-semibold"
             >
               {company.name}
             </h2>
-            <p className="text-muted mt-1 max-w-md text-xs leading-relaxed text-pretty">
-              {company.tagline}
+            <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
+              {company.brandLine}. {company.tagline}
             </p>
           </div>
           <nav aria-label="Footer">
@@ -109,7 +119,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-muted hover:text-accent focus-visible:outline-accent inline-flex min-h-10 items-center text-xs underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                    className="text-muted hover:text-accent focus-visible:outline-accent inline-flex min-h-10 items-center text-sm underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                   >
                     {link.label}
                   </a>

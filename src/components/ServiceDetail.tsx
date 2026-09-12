@@ -35,8 +35,8 @@ export function ServiceDetail({
       aria-describedby={introId}
     >
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12">
-          <header>
+        <div className="brand-card group grid overflow-hidden lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+          <div className="p-6 sm:p-8">
             <h2
               id={headingId}
               className="font-display text-ink text-[clamp(1.35rem,3vw,1.75rem)] font-bold tracking-tight text-balance"
@@ -54,42 +54,63 @@ export function ServiceDetail({
                 <h3 className="font-display text-accent text-sm font-semibold tracking-wide uppercase">
                   {asideTitle}
                 </h3>
-                <ul className="text-muted mt-3 space-y-2 text-sm" role="list">
+                <ul className="mt-3 space-y-2" role="list">
                   {asideItems.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li
+                      key={item}
+                      className="text-muted flex gap-2 text-sm leading-snug"
+                    >
+                      <span aria-hidden="true" className="text-accent mt-0.5">
+                        ✓
+                      </span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
             ) : null}
             {image ? (
-              <figure className="border-border relative mt-8 aspect-[4/3] overflow-hidden border">
+              <figure className="brand-card-media relative mt-8 aspect-[4/3] rounded-xl">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="rounded-xl object-cover"
                 />
               </figure>
             ) : null}
-          </header>
+          </div>
 
-          <div>
-            <h3 className="sr-only">{title} service list</h3>
+          <div className="border-border bg-bg-muted/40 border-t p-6 sm:p-8 lg:border-t-0 lg:border-l">
+            <h3 className="font-display text-ink text-sm font-semibold tracking-wide uppercase">
+              What’s included
+            </h3>
             <ul
-              className="border-border border-l-accent columns-1 gap-x-8 border-l-2 pl-4 sm:columns-2"
+              className="mt-4 grid gap-2 sm:grid-cols-2"
               aria-label={`${title} offerings`}
               role="list"
             >
               {items.map((item) => (
                 <li
                   key={item}
-                  className="text-ink break-inside-avoid py-1.5 text-sm leading-snug"
+                  className="text-ink flex gap-2 rounded-lg bg-white/80 px-3 py-2.5 text-sm leading-snug"
                 >
-                  {item}
+                  <span aria-hidden="true" className="text-accent shrink-0">
+                    ✓
+                  </span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
+            <p className="brand-card-cta mt-6">
+              <a href="#contact" className="hover:underline">
+                Request this solution
+              </a>
+              <span aria-hidden="true" data-arrow>
+                →
+              </span>
+            </p>
           </div>
         </div>
       </div>

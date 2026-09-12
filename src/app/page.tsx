@@ -37,20 +37,20 @@ export default function Home() {
         >
           <div className="safe-px mx-auto max-w-6xl pt-12 sm:pt-14">
             <h2 className="font-display text-ink text-[clamp(1.35rem,3vw,1.75rem)] font-bold tracking-tight">
-              Capability detail
+              Solutions in detail
             </h2>
             <p className="text-muted mt-2 max-w-2xl text-sm text-pretty sm:text-base">
-              Full service coverage for scoping discussions — structured by
-              discipline, illustrated with work from our sites.
+              Dig into each solution — what it covers, how it helps, and what
+              our teams deliver on the ground.
             </p>
           </div>
 
           <ServiceDetail
             id="solar"
             title="Solar energy solutions"
-            intro="Customized solar systems for homes, businesses, industries, institutions, farms, and community projects — designed for cost reduction and reliable sustainable supply."
+            intro="Custom solar for homes, businesses, farms, and institutions — designed to cut costs and keep power reliable."
             items={solarServices}
-            asideTitle="Engagement standards"
+            asideTitle="What you can expect"
             asideItems={solarBenefits}
             image={siteImages.rooftopSolarCrew}
           />
@@ -58,9 +58,9 @@ export default function Home() {
           <ServiceDetail
             id="critical-power"
             title="Critical power solutions"
-            intro="Continuous, stable, high-quality power for mission-critical applications — protecting productivity and sensitive equipment from interruption and poor power quality."
+            intro="Keep essential operations running when the grid dips or drops — backup power that protects productivity and sensitive equipment."
             items={criticalPowerServices}
-            asideTitle="Typical applications"
+            asideTitle="Ideal for"
             asideItems={criticalPowerApplications}
             image={siteImages.siteDriveInstall}
           />
@@ -68,7 +68,7 @@ export default function Home() {
           <ServiceDetail
             id="building-electrical"
             title="Building electrical services"
-            intro="Complete building electrical engineering from planning and design through installation and commissioning — including distribution, cable management, and cabling routed through site pits where the infrastructure demands it."
+            intro="From planning to installation — distribution, lighting, cable management, and cabling through site pits when the job needs lasting infrastructure."
             items={buildingElectricalServices}
             image={siteImages.cablingThroughPit}
           />
@@ -76,15 +76,15 @@ export default function Home() {
           <ServiceDetail
             id="safety"
             title="Electrical safety & compliance"
-            intro="Testing, inspection, certification, and protection systems that identify defects before they become hazards — safeguarding people and property."
+            intro="Testing, inspection, and protection that catch problems early — keeping people and property safer."
             items={safetyServices}
             image={siteImages.distributionBoardOpen}
           />
 
           <ServiceDetail
             id="maintenance"
-            title="Operations & maintenance"
-            intro="Maintenance programmes that extend equipment life, improve performance, reduce downtime, and protect investment — as one-time visits or annual contracts."
+            title="Care & maintenance"
+            intro="Keep systems performing after install — one-time visits or ongoing care that protect your investment."
             items={maintenanceServices}
             image={siteImages.distributionBoardClosed}
           />

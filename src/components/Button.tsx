@@ -5,10 +5,11 @@ import type {
 } from "react";
 
 const base =
-  "inline-flex min-h-11 items-center justify-center rounded-sm px-5 py-2.5 font-display text-sm font-semibold tracking-wide transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex min-h-11 items-center justify-center rounded-lg px-5 py-2.5 font-display text-sm font-semibold tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants = {
-  primary: "bg-accent text-white hover:bg-accent-deep",
+  primary:
+    "bg-accent text-white hover:bg-accent-deep shadow-[0_8px_20px_rgba(26,82,48,0.25)] hover:shadow-[0_10px_24px_rgba(26,82,48,0.32)]",
   secondary:
     "border border-border-strong bg-bg-elevated text-ink hover:border-accent hover:text-accent",
   ghost: "text-accent hover:bg-bg-muted",

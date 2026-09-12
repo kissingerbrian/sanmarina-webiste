@@ -14,7 +14,7 @@ export function Panel({
 }: PanelProps) {
   return (
     <Tag
-      className={`border-border bg-bg-elevated border ${className}`}
+      className={`border-border bg-bg-elevated rounded-xl border ${className}`}
       {...rest}
     >
       {children}

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { company, navLinks } from "@/lib/content";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Button } from "@/components/Button";
 
 export function SiteHeader() {
@@ -60,16 +61,13 @@ export function SiteHeader() {
       className="border-border bg-bg-elevated/95 safe-px sticky top-0 z-40 border-b backdrop-blur-sm"
       style={{ boxShadow: "var(--header-shadow)" }}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 py-2.5 sm:py-3">
         <a
           href="#top"
-          className="font-display text-ink focus-visible:outline-accent min-h-11 min-w-0 shrink rounded-sm text-sm font-bold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:text-base"
+          className="focus-visible:outline-accent min-h-12 min-w-0 shrink rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           aria-label={`${company.name} — back to top`}
         >
-          <span aria-hidden="true">
-            {company.shortName}
-            <span className="text-accent"> Engineering</span>
-          </span>
+          <BrandLogo size="header" priority />
         </a>
 
         <nav className="hidden items-center lg:flex" aria-label="Primary">
@@ -92,14 +90,14 @@ export function SiteHeader() {
             href="#contact"
             variant="secondary"
             className="hidden !min-h-10 !px-4 !py-2 sm:inline-flex"
-            aria-label="Request a consultation"
+            aria-label="Get in touch"
           >
-            Consultation
+            Get in touch
           </Button>
           <button
             ref={toggleRef}
             type="button"
-            className="border-border text-ink focus-visible:outline-accent inline-flex h-11 w-11 items-center justify-center rounded-sm border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 lg:hidden"
+            className="border-border text-ink focus-visible:outline-accent inline-flex h-11 w-11 items-center justify-center rounded-lg border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 lg:hidden"
             aria-expanded={open}
             aria-controls={menuId}
             aria-haspopup="dialog"
@@ -163,7 +161,7 @@ export function SiteHeader() {
               className="!min-h-12 w-full"
               onClick={closeMenu}
             >
-              Request consultation
+              Get in touch
             </Button>
           </li>
         </ul>

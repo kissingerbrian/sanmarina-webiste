@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f3f5f7;
+  --bg: #f5f7f4;
   --bg-elevated: #ffffff;
-  --bg-muted: #e8ecf0;
-  --text: #1a2330;
-  --text-muted: #4d5b6b;
-  --accent: #0c5f5f;
-  --accent-deep: #084646;
-  --sun: #a86f18;
-  --border: #cfd6de;
-  --border-strong: #aeb8c4;
+  --bg-muted: #e7eee8;
+  --text: #14241a;
+  --text-muted: #4a5c50;
+  --accent: #1a5230;
+  --accent-deep: #123d24;
+  --sun: #f58220;
+  --border: #cfd9d1;
+  --border-strong: #a8b8ac;
   --page-inline: clamp(1rem, 4vw, 2.5rem);
   --header-shadow: 0 1px 0 rgba(26, 35, 48, 0.06);
+  --card-shadow: 0 10px 28px rgba(15, 40, 36, 0.08);
+  --radius-card: 0.75rem;
 }
 
 @theme inline {
@@ -94,6 +96,54 @@
   .animate-fade-delay {
     animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
   }
+
+  .brand-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    background: var(--bg-elevated);
+    overflow: hidden;
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .brand-card:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    box-shadow: var(--card-shadow);
+  }
+
+  .brand-card-media {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-muted);
+  }
+
+  .brand-card-media img {
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .group:hover .brand-card-media img {
+    transform: scale(1.05);
+  }
+
+  .brand-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--accent);
+    font-family: var(--font-sora), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .brand-card-cta span[data-arrow] {
+    transition: transform 0.2s ease;
+  }
+
+  .group:hover .brand-card-cta span[data-arrow] {
+    transform: translateX(3px);
+  }
 }
 
 @keyframes fade-up {
@@ -116,6 +166,17 @@
   .animate-fade,
   .animate-fade-delay {
     animation: none !important;
+  }
+
+  .brand-card,
+  .brand-card-media img,
+  .brand-card-cta span[data-arrow] {
+    transition: none !important;
+  }
+
+  .group:hover .brand-card-media img,
+  .group:hover .brand-card-cta span[data-arrow] {
+    transform: none !important;
   }
 }
 

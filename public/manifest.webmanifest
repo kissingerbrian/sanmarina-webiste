@@ -5,18 +5,18 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f3f5f7",
-  "theme_color": "#0c5f5f",
+  "theme_color": "#1a5230",
   "lang": "en",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/brand/sm-solar-electrical.webp",
+      "sizes": "250x120",
+      "type": "image/webp",
       "purpose": "any"
     },
     {
-      "src": "/apple-touch-icon.svg",
-      "sizes": "180x180",
+      "src": "/favicon.svg",
+      "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     }

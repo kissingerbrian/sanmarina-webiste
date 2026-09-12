@@ -19,8 +19,8 @@ const sora = Sora({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3f5f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#f3f5f7" },
+    { media: "(prefers-color-scheme: light)", color: "#1a5230" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a5230" },
   ],
   colorScheme: "light",
   width: "device-width",
@@ -100,8 +100,11 @@ export const metadata: Metadata = {
     "content-language": "en",
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/apple-touch-icon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/brand/sm-solar-electrical.webp", type: "image/webp" },
+    ],
+    apple: [{ url: "/brand/sm-solar-electrical.webp", type: "image/webp" }],
   },
   manifest: "/manifest.webmanifest",
 };

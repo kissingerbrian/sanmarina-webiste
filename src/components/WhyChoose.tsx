@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { industries, industryList, whyChooseUs } from "@/lib/content";
-import { Panel } from "@/components/Panel";
+import { BrandMediaCard } from "@/components/BrandMediaCard";
 
 export function Standards() {
   return (
@@ -9,17 +8,17 @@ export function Standards() {
       className="safe-px section-y scroll-mt-20"
       aria-labelledby="standards-heading"
     >
-      <div className="border-border bg-accent mx-auto max-w-6xl border px-6 py-10 text-white sm:px-10 sm:py-12">
+      <div className="bg-accent mx-auto max-w-6xl rounded-2xl px-6 py-10 text-white sm:px-10 sm:py-12">
         <h2
           id="standards-heading"
           className="font-display text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
         >
-          Safety and compliance are not extras. They are the work.
+          Safety isn’t optional. It’s part of how we earn your trust.
         </h2>
         <p className="mt-4 max-w-3xl text-[clamp(0.95rem,2.1vw,1.05rem)] leading-relaxed text-pretty text-white/90">
-          We help clients ensure electrical systems meet applicable standards
-          while reducing risk from faults, surge events, and lightning —
-          protecting people, property, and continuity of operations.
+          We help protect people, property, and continuity of operations —
+          through proper testing, earthing, surge protection, and careful
+          installation.
         </p>
       </div>
     </section>
@@ -35,41 +34,40 @@ export function WhyChoose() {
       aria-describedby="why-us-intro"
     >
       <div className="mx-auto max-w-6xl">
-        <header className="max-w-2xl">
+        <header className="mx-auto max-w-2xl text-center">
           <h2
             id="why-us-heading"
-            className="font-display text-ink text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
+            className="font-display text-ink text-[clamp(1.5rem,3.2vw,2rem)] font-bold tracking-tight text-balance"
           >
-            Why organizations choose San Marina
+            Why customers choose San Marina
           </h2>
           <p id="why-us-intro" className="text-muted mt-3 text-pretty">
-            Mature delivery: qualified people, controlled quality, and support
-            that continues after commissioning.
+            Not another faceless installer — a brand you remember because the
+            experience feels clear, human, and reliable.
           </p>
         </header>
 
         <ul
           className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           role="list"
-          aria-label="Reasons to choose San Marina Engineering"
+          aria-label="Reasons to choose San Marina"
         >
           {whyChooseUs.map((item) => (
             <li key={item.title}>
-              <Panel
-                as="article"
-                className="h-full p-5 sm:p-6"
+              <article
+                className="brand-card group h-full p-5 sm:p-6"
                 aria-labelledby={`why-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
               >
                 <h3
                   id={`why-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
-                  className="font-display text-ink text-base font-semibold"
+                  className="font-display text-ink group-hover:text-accent text-base font-semibold transition-colors"
                 >
                   {item.title}
                 </h3>
                 <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
                   {item.body}
                 </p>
-              </Panel>
+              </article>
             </li>
           ))}
         </ul>
@@ -87,49 +85,34 @@ export function Industries() {
       aria-describedby="industries-intro"
     >
       <div className="mx-auto max-w-6xl">
-        <header className="max-w-2xl">
+        <header className="mx-auto max-w-2xl text-center">
           <h2
             id="industries-heading"
-            className="font-display text-ink text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
+            className="font-display text-ink text-[clamp(1.5rem,3.2vw,2rem)] font-bold tracking-tight text-balance"
           >
-            Industries we serve
+            Built for the places you care about
           </h2>
           <p id="industries-intro" className="text-muted mt-3 text-pretty">
-            Sector experience across facilities where power quality, safety, and
-            uptime matter — shown through the environments we actually work in.
+            Whether it’s your home, your business, or a busy site — we tailor
+            solutions to how you use power.
           </p>
         </header>
 
         <ul
-          className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
           role="list"
-          aria-label="Industry panels"
+          aria-label="Who we serve"
         >
           {industries.map((industry) => (
             <li key={industry.title}>
-              <article className="border-border group relative min-h-[15rem] overflow-hidden border">
-                <Image
-                  src={industry.image.src}
-                  alt=""
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                  aria-hidden="true"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,28,36,0.9)_0%,rgba(15,28,36,0.4)_55%,rgba(15,28,36,0.15)_100%)]"
-                />
-                <div className="relative flex h-full min-h-[15rem] flex-col justify-end p-5">
-                  <h3 className="font-display text-lg font-semibold text-white">
-                    {industry.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-pretty text-white/85">
-                    {industry.summary}
-                  </p>
-                </div>
-                <span className="sr-only">{industry.image.alt}</span>
-              </article>
+              <BrandMediaCard
+                image={industry.image}
+                title={industry.title}
+                description={industry.summary}
+                cta="Talk to us"
+                href="#contact"
+                imageHeightClassName="h-40 sm:h-44"
+              />
             </li>
           ))}
         </ul>
@@ -137,7 +120,7 @@ export function Industries() {
         <ul
           className="border-border mt-10 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3"
           role="list"
-          aria-label="Full industry list"
+          aria-label="Full list of customers we serve"
         >
           {industryList.map((industry) => (
             <li
