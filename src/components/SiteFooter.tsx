@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/seo";
 import { BrandLogo } from "@/components/BrandLogo";
 import { ContactForm } from "@/components/ContactForm";
 import { Panel } from "@/components/Panel";
+import Link from "next/link";
 
 export function ContactSection() {
   const mapsQuery = encodeURIComponent(
@@ -134,13 +135,13 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)_minmax(0,0.8fr)]">
           <div className="max-w-md">
-            <a
-              href="#top"
+            <Link
+              href="/"
               className="focus-visible:outline-accent inline-flex rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-              aria-label={`${company.name} — back to top`}
+              aria-label={`${company.name} — home`}
             >
               <BrandLogo size="footer" />
-            </a>
+            </Link>
             <h2
               id="footer-heading"
               className="font-display text-ink mt-4 text-base font-semibold"

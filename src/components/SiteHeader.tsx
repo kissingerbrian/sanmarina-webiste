@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import Link from "next/link";
 import { company, navLinks } from "@/lib/content";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Button } from "@/components/Button";
@@ -62,13 +63,13 @@ export function SiteHeader() {
       style={{ boxShadow: "var(--header-shadow)" }}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 py-2.5 sm:py-3">
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="focus-visible:outline-accent min-h-12 min-w-0 shrink rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-          aria-label={`${company.name} — back to top`}
+          aria-label={`${company.name} — home`}
         >
           <BrandLogo size="header" priority />
-        </a>
+        </Link>
 
         <nav className="hidden items-center lg:flex" aria-label="Primary">
           <ul className="flex items-center gap-1" role="list">
@@ -87,12 +88,12 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button
-            href="#contact"
+            href="/contact"
             variant="secondary"
             className="hidden !min-h-10 !px-4 !py-2 sm:inline-flex"
-            aria-label="Get in touch"
+            aria-label="Request a site assessment"
           >
-            Get in touch
+            Request assessment
           </Button>
           <button
             ref={toggleRef}
@@ -157,11 +158,11 @@ export function SiteHeader() {
           ))}
           <li className="pt-2 sm:hidden">
             <Button
-              href="#contact"
+              href="/contact"
               className="!min-h-12 w-full"
               onClick={closeMenu}
             >
-              Get in touch
+              Request assessment
             </Button>
           </li>
         </ul>

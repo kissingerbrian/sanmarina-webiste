@@ -48,10 +48,14 @@ export function BrandMediaCard({
         ) : null}
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h3 className="font-display text-ink group-hover:text-accent text-lg font-bold tracking-tight text-balance transition-colors">
+        {meta ? (
+          <p className="font-display text-accent text-[0.65rem] font-semibold tracking-[0.14em] uppercase">
+            {meta}
+          </p>
+        ) : null}
+        <h3 className="font-display text-ink group-hover:text-accent mt-1.5 text-lg font-bold tracking-tight text-balance transition-colors">
           {title}
         </h3>
-        {meta ? <p className="text-muted mt-1 text-xs">{meta}</p> : null}
         <p className="text-muted mt-3 flex-1 text-sm leading-relaxed text-pretty">
           {description}
         </p>

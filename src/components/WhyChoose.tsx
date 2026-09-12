@@ -1,25 +1,52 @@
-import { industries, industryList, whyChooseUs } from "@/lib/content";
+import Image from "next/image";
+import {
+  industries,
+  industryList,
+  whyChooseUs,
+  siteImages,
+} from "@/lib/content";
 import { BrandMediaCard } from "@/components/BrandMediaCard";
+import { Button } from "@/components/Button";
 
-export function Standards() {
+export function SafetySection() {
   return (
     <section
-      id="standards"
+      id="safety-highlight"
       className="safe-px section-y scroll-mt-20"
-      aria-labelledby="standards-heading"
+      aria-labelledby="safety-highlight-heading"
     >
-      <div className="bg-accent mx-auto max-w-6xl rounded-2xl px-6 py-10 text-white sm:px-10 sm:py-12">
-        <h2
-          id="standards-heading"
-          className="font-display text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
-        >
-          Safety isn’t optional. It’s part of how we earn your trust.
-        </h2>
-        <p className="mt-4 max-w-3xl text-[clamp(0.95rem,2.1vw,1.05rem)] leading-relaxed text-pretty text-white/90">
-          We help protect people, property, and continuity of operations —
-          through proper testing, earthing, surge protection, and careful
-          installation.
-        </p>
+      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-2xl lg:grid-cols-2">
+        <div className="bg-accent relative min-h-[18rem] text-white lg:min-h-full">
+          <Image
+            src={siteImages.distributionBoardOpen.src}
+            alt={siteImages.distributionBoardOpen.alt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover opacity-35"
+          />
+          <div className="relative flex h-full flex-col justify-end p-8 sm:p-10">
+            <p className="font-display text-xs font-semibold tracking-[0.18em] text-teal-100 uppercase">
+              Safety & compliance
+            </p>
+            <h2
+              id="safety-highlight-heading"
+              className="font-display mt-3 text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold tracking-tight text-balance"
+            >
+              Safety is engineering.
+            </h2>
+          </div>
+        </div>
+        <div className="border-border bg-bg-elevated border p-8 sm:p-10 lg:border-l-0">
+          <p className="text-muted text-[clamp(0.98rem,2.1vw,1.1rem)] leading-relaxed text-pretty">
+            Protection, testing and compliance are not optional extras. They are
+            part of how we design and deliver reliable systems — including
+            earthing, surge protection, lightning protection, inspection and
+            verification.
+          </p>
+          <Button href="/solutions/safety" className="mt-6">
+            Explore safety services
+          </Button>
+        </div>
       </div>
     </section>
   );
@@ -29,7 +56,7 @@ export function WhyChoose() {
   return (
     <section
       id="why-us"
-      className="safe-px section-y scroll-mt-20 pt-0"
+      className="safe-px section-y scroll-mt-20"
       aria-labelledby="why-us-heading"
       aria-describedby="why-us-intro"
     >
@@ -43,7 +70,7 @@ export function WhyChoose() {
           </h2>
           <p id="why-us-intro" className="text-muted mt-3 text-pretty">
             Not another faceless installer — a brand you remember because the
-            experience feels clear, human, and reliable.
+            experience feels clear, human and reliable.
           </p>
         </header>
 
@@ -54,14 +81,8 @@ export function WhyChoose() {
         >
           {whyChooseUs.map((item) => (
             <li key={item.title}>
-              <article
-                className="brand-card group h-full p-5 sm:p-6"
-                aria-labelledby={`why-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
-              >
-                <h3
-                  id={`why-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
-                  className="font-display text-ink group-hover:text-accent text-base font-semibold transition-colors"
-                >
+              <article className="brand-card group h-full p-5 sm:p-6">
+                <h3 className="font-display text-ink group-hover:text-accent text-base font-semibold transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
@@ -93,8 +114,8 @@ export function Industries() {
             Built for the places you care about
           </h2>
           <p id="industries-intro" className="text-muted mt-3 text-pretty">
-            Whether it’s your home, your business, or a busy site — we tailor
-            solutions to how you use power.
+            Grouped by the environments we serve — with solutions shaped around
+            how each one uses power.
           </p>
         </header>
 
@@ -110,7 +131,7 @@ export function Industries() {
                 title={industry.title}
                 description={industry.summary}
                 cta="Talk to us"
-                href="#contact"
+                href="/contact"
                 imageHeightClassName="h-40 sm:h-44"
               />
             </li>
@@ -134,4 +155,9 @@ export function Industries() {
       </div>
     </section>
   );
+}
+
+/** @deprecated Prefer SafetySection for homepage */
+export function Standards() {
+  return <SafetySection />;
 }

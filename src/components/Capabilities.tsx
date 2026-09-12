@@ -18,14 +18,14 @@ export function CapabilitiesOverview() {
             id="capabilities-heading"
             className="font-display text-ink mt-3 text-[clamp(1.55rem,3.5vw,2.15rem)] font-bold tracking-tight text-balance"
           >
-            Explore what we can do for you
+            Serious power infrastructure for serious operations.
           </h2>
           <p
             id="capabilities-intro"
             className="text-muted mt-3 text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
           >
-            Clear solutions for homes and businesses — solar, backup power,
-            electrical works, and long-term care.
+            Five engineering disciplines — presented as clear solutions for
+            homes, businesses and institutions.
           </p>
         </header>
 
@@ -40,10 +40,12 @@ export function CapabilitiesOverview() {
               className={index === 4 ? "sm:col-span-2 lg:col-span-1" : ""}
             >
               <BrandMediaCard
-                href={`#${item.id}`}
+                href={`/solutions/${item.id}`}
                 image={item.image}
                 title={item.title}
                 description={item.summary}
+                meta={item.meta}
+                eyebrow={String(index + 1).padStart(2, "0")}
                 cta="Explore"
                 imageHeightClassName="h-44 sm:h-52"
               />
@@ -72,26 +74,30 @@ export function Approach() {
             id="approach-heading"
             className="font-display text-ink mt-3 text-[clamp(1.55rem,3.5vw,2.15rem)] font-bold tracking-tight text-balance"
           >
-            A simple path from conversation to reliable power
+            A disciplined path from conversation to reliable power
           </h2>
           <p
             id="approach-intro"
             className="text-muted mt-3 text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
           >
-            No jargon gatekeeping — just a clear process that puts your needs
-            first.
+            Understand → Engineer → Deliver → Sustain — our signature delivery
+            model.
           </p>
         </header>
 
         <ol
-          className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          className="relative mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
           aria-label="How we work"
         >
+          <div
+            aria-hidden="true"
+            className="bg-accent/25 absolute top-8 right-[12%] left-[12%] hidden h-px lg:block"
+          />
           {approachSteps.map((step, index) => (
-            <li key={step.title}>
+            <li key={step.title} className="relative">
               <article className="brand-card group h-full p-5 sm:p-6">
                 <span className="font-display text-sun text-xs font-semibold tracking-wider">
-                  Step {index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-display text-ink group-hover:text-accent mt-2 text-lg font-semibold transition-colors">
                   {step.title}

@@ -2,14 +2,17 @@
 
 import { useId, useState, type FormEvent } from "react";
 import { Button } from "@/components/Button";
+import { trackEvent } from "@/lib/analytics";
 
 const projectTypes = [
-  "Home solar",
-  "Business / commercial solar",
-  "Backup / battery power",
-  "Building electrical",
-  "Safety inspection",
-  "Maintenance / support",
+  "Solar",
+  "Battery storage",
+  "Critical power",
+  "Electrical works",
+  "Inspection & compliance",
+  "Maintenance",
+  "Consultancy",
+  "Solar pumping",
   "Other",
 ] as const;
 
@@ -91,6 +94,10 @@ export function ContactForm() {
 
       setStatus("success");
       form.reset();
+      trackEvent("site_assessment_submitted", {
+        project_type: payload.project_type,
+        location: payload.location,
+      });
     } catch {
       setStatus("error");
       setErrorMessage(

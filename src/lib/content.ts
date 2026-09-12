@@ -3,11 +3,25 @@ export const company = {
   shortName: "San Marina",
   brandLine: "SM Solar & Electrical",
   tagline: "Engineering Reliable Power. Building a Sustainable Future.",
+  headline: "Engineering Reliable Power.",
+  supportingHeadline: "Building a Sustainable Future.",
   positioning:
-    "Solar, backup power, and electrical solutions that keep homes and businesses running — planned carefully, installed properly, and supported after handover.",
+    "Solar, critical power and electrical systems designed around your needs, installed professionally and supported beyond handover.",
   blurb:
-    "San Marina helps homes, businesses, and institutions across Kenya get dependable solar and electrical systems they can trust.",
+    "San Marina Engineering Limited is an engineering-led power systems company delivering solar, electrical, critical-power, safety and maintenance solutions for homes, businesses and institutions across Kenya.",
   proofLine: "Assess · Design · Install · Support",
+  mission:
+    "To deliver practical energy and electrical solutions through sound engineering, quality equipment, professional workmanship and dependable support.",
+  vision:
+    "To be a trusted engineering partner for reliable, efficient and sustainable power solutions.",
+  values: [
+    "Engineering Excellence",
+    "Safety",
+    "Quality",
+    "Integrity",
+    "Accountability",
+    "Long-Term Value",
+  ],
 } as const;
 
 export const brandLogo = {
@@ -18,11 +32,12 @@ export const brandLogo = {
 } as const;
 
 export const navLinks = [
-  { href: "#capabilities", label: "Solutions" },
-  { href: "#projects", label: "Projects" },
-  { href: "#approach", label: "How we work" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#capabilities", label: "Solutions" },
+  { href: "/projects", label: "Projects" },
+  { href: "/#approach", label: "How we work" },
+  { href: "/about", label: "About" },
+  { href: "/solar-packages", label: "Packages" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const siteImages = {
@@ -68,36 +83,41 @@ export const capabilities = [
   {
     id: "solar",
     title: "Solar energy",
+    meta: "PV · Hybrid · Off-grid · Pumping",
     summary:
-      "Generate your own power and cut electricity costs with systems sized for how you actually live or work.",
+      "Generate, store and manage energy with systems engineered around actual consumption.",
     image: siteImages.rooftopSolarCrew,
   },
   {
     id: "critical-power",
-    title: "Backup & critical power",
+    title: "Critical power",
+    meta: "BESS · UPS · Generators · ATS",
     summary:
-      "Stay online when the grid fails — batteries, UPS, and standby power for what matters most.",
+      "Stay online when the grid fails — storage and standby power for what matters most.",
     image: siteImages.siteDriveInstall,
   },
   {
     id: "building-electrical",
     title: "Building electrical",
+    meta: "Design · Distribution · Lighting",
     summary:
-      "Safe wiring, distribution, and lighting that make your building ready for daily use.",
+      "Safe wiring, distribution and lighting that make buildings ready for daily use.",
     image: siteImages.distributionBoardClosed,
   },
   {
     id: "safety",
     title: "Safety & compliance",
+    meta: "Testing · Earthing · Surge · LPS",
     summary:
-      "Testing and protection that keep people, property, and equipment out of harm’s way.",
+      "Protection and verification built into delivery — not treated as optional extras.",
     image: siteImages.distributionBoardOpen,
   },
   {
     id: "maintenance",
     title: "Care & maintenance",
+    meta: "Preventive · Corrective · Lifecycle",
     summary:
-      "Ongoing support that protects your investment and keeps systems performing year after year.",
+      "Ongoing support that protects your investment after commissioning.",
     image: siteImages.driveProtectionDetail,
   },
 ] as const;
@@ -107,20 +127,42 @@ export const featuredProjects = [
     id: "western-fresh",
     title: "Western Fresh Industries",
     location: "Kisumu, Kenya",
-    category: "Commercial solar",
+    category: "Commercial solar & electrical",
+    sector: "Industrial",
+    role: "Solar works and electrical works by San Marina",
     summary:
-      "Rooftop solar and electrical works for a sunflower processing facility — cleaner power for a busy industrial site.",
+      "Rooftop solar and electrical works for a sunflower processing facility — generation on the roof, disciplined distribution on the ground.",
+    requirement:
+      "The facility needed reliable, cost-conscious power support for industrial processing operations in Kisumu.",
+    approach:
+      "San Marina delivered commercial solar and electrical works coordinated around the site’s operational needs and existing infrastructure.",
+    result:
+      "A commissioned installation that pairs rooftop generation with professional electrical delivery for day-to-day plant operations.",
     image: siteImages.westernFresh,
+    gallery: [
+      siteImages.westernFresh,
+      siteImages.rooftopSolarCrew,
+      siteImages.distributionBoardWiring,
+    ],
     featured: true,
   },
   {
     id: "rooftop-array",
     title: "Commercial rooftop solar",
     location: "Kenya",
-    category: "Solar installation",
+    category: "Solar PV installation",
+    sector: "Commercial",
+    role: "Installed by San Marina",
     summary:
       "A large rooftop array delivered by our on-site team — work you can see from the ground up.",
+    requirement:
+      "The client needed a professionally installed commercial rooftop solar array with organised cabling and commissioning.",
+    approach:
+      "Our crew handled installation, array alignment and site coordination under real Kenyan site conditions.",
+    result:
+      "A completed rooftop solar installation ready for operational use and ongoing maintenance support.",
     image: siteImages.rooftopSolarCrew,
+    gallery: [siteImages.rooftopSolarCrew, siteImages.westernFresh],
     featured: false,
   },
   {
@@ -128,19 +170,41 @@ export const featuredProjects = [
     title: "Power distribution upgrade",
     location: "Kenya",
     category: "Building electrical",
+    sector: "Infrastructure",
+    role: "Electrical works by San Marina",
     summary:
       "Organised metering and protection so the building’s power is safer and easier to manage.",
+    requirement:
+      "The site required clear distribution, metering and protection for safe, inspectable power infrastructure.",
+    approach:
+      "We installed and organised distribution equipment with attention to protection, labelling and maintainability.",
+    result:
+      "A cleaner, more manageable electrical distribution setup suitable for ongoing inspection and operation.",
     image: siteImages.distributionBoardWiring,
+    gallery: [
+      siteImages.distributionBoardWiring,
+      siteImages.distributionBoardOpen,
+      siteImages.distributionBoardClosed,
+    ],
     featured: false,
   },
   {
     id: "site-cabling",
     title: "Site cabling through pit",
     location: "Kenya",
-    category: "Infrastructure",
+    category: "Electrical infrastructure",
+    sector: "Infrastructure",
+    role: "Electrical infrastructure by San Marina",
     summary:
       "Cabling routed through an underground pit — durable infrastructure that keeps connections protected.",
+    requirement:
+      "Power and control cabling needed a protected underground route that would remain maintainable over time.",
+    approach:
+      "Cables were routed through a site pit with practical protection for long-term durability.",
+    result:
+      "Hidden but critical infrastructure that supports reliable connections beyond the visible installation.",
     image: siteImages.cablingThroughPit,
+    gallery: [siteImages.cablingThroughPit, siteImages.siteDriveInstall],
     featured: false,
   },
 ] as const;
@@ -148,19 +212,19 @@ export const featuredProjects = [
 export const approachSteps = [
   {
     title: "Understand",
-    body: "We listen to your needs, your bills, and your site — before recommending anything.",
+    body: "We listen to your needs, energy consumption, site conditions and operational requirements before recommending anything.",
   },
   {
-    title: "Design",
-    body: "You get a clear plan that fits your budget, your space, and how you use power.",
+    title: "Engineer",
+    body: "We translate requirements into a technically sound solution designed around actual loads, space, safety and future needs.",
   },
   {
-    title: "Install",
-    body: "Professional installation and commissioning so systems work the way we promised.",
+    title: "Deliver",
+    body: "We supply, install, test and commission the system professionally.",
   },
   {
-    title: "Support",
-    body: "We stay available for maintenance, troubleshooting, and upgrades after handover.",
+    title: "Sustain",
+    body: "We remain available for maintenance, troubleshooting, monitoring and future upgrades.",
   },
 ] as const;
 
@@ -276,34 +340,40 @@ export const whyChooseUs = [
 
 export const industries = [
   {
-    title: "Homes & estates",
-    summary: "Comfortable, reliable power for modern living.",
+    title: "Commercial",
+    summary:
+      "Offices, retail and mixed-use developments that need reliable day-to-day power.",
     image: siteImages.rooftopSolarCrew,
   },
   {
-    title: "Businesses",
-    summary: "Lower bills and fewer interruptions for your operations.",
+    title: "Industrial",
+    summary:
+      "Manufacturing, processing and warehousing environments with demanding loads.",
     image: siteImages.westernFresh,
   },
   {
-    title: "Farms & agribusiness",
-    summary: "Solar and pumping solutions that keep production moving.",
-    image: siteImages.siteDriveInstall,
-  },
-  {
-    title: "Schools & institutions",
-    summary: "Dependable electrical systems for places that serve people.",
+    title: "Institutional",
+    summary:
+      "Schools, universities and healthcare facilities where uptime and safety matter.",
     image: siteImages.distributionBoardClosed,
   },
   {
-    title: "Industrial sites",
-    summary: "Power infrastructure built for demanding environments.",
-    image: siteImages.distributionBoardOpen,
+    title: "Hospitality",
+    summary:
+      "Hotels, apartments and guest facilities that cannot afford avoidable outages.",
+    image: siteImages.siteDriveInstall,
   },
   {
-    title: "Infrastructure works",
-    summary: "Cabling and distribution that hold up over time.",
+    title: "Infrastructure",
+    summary:
+      "Telecommunications, water utilities and infrastructure cabling works.",
     image: siteImages.cablingThroughPit,
+  },
+  {
+    title: "Public & development",
+    summary:
+      "Government, NGO and development projects that need accountable delivery.",
+    image: siteImages.distributionBoardOpen,
   },
 ] as const;
 
@@ -321,3 +391,81 @@ export const industryList = [
   "Telecommunications",
   "Water Utilities",
 ] as const;
+
+export const solarPackages = [
+  {
+    id: "home-plus",
+    name: "Home Plus",
+    capacity: "5 kW Hybrid Solar System",
+    summary:
+      "A practical residential hybrid configuration for households ready to cut grid dependence and keep essential loads running.",
+    includes: [
+      "5 kW hybrid inverter",
+      "5.12 kWh lithium battery",
+      "5 × 620 W solar panels",
+      "Protection, cabling and mounting components",
+      "Professional installation accessories",
+    ],
+    note: "Typical configuration. Final system selection is subject to site and load assessment.",
+  },
+  {
+    id: "elite",
+    name: "Elite",
+    capacity: "10 kW Hybrid Solar System",
+    summary:
+      "A higher-capacity residential hybrid solution for larger homes or higher daily energy use.",
+    includes: [
+      "10 kW hybrid inverter",
+      "Lithium battery storage (sized to assessment)",
+      "High-capacity solar module array",
+      "Protection, cabling and mounting components",
+      "Professional installation accessories",
+    ],
+    note: "Typical configuration. Final system selection is subject to site and load assessment.",
+  },
+] as const;
+
+export function getProjectBySlug(slug: string) {
+  return featuredProjects.find((project) => project.id === slug);
+}
+
+export function getCapabilityBySlug(slug: string) {
+  return capabilities.find((item) => item.id === slug);
+}
+
+export const solutionDetails = {
+  solar: {
+    intro:
+      "Custom solar for homes, businesses, farms and institutions in Kisumu and across Kenya — designed to cut costs and keep power reliable.",
+    items: solarServices,
+    asideTitle: "What you can expect",
+    asideItems: solarBenefits,
+    image: siteImages.rooftopSolarCrew,
+  },
+  "critical-power": {
+    intro:
+      "Keep essential operations running when the grid dips or drops — backup power that protects productivity and sensitive equipment.",
+    items: criticalPowerServices,
+    asideTitle: "Ideal for",
+    asideItems: criticalPowerApplications,
+    image: siteImages.siteDriveInstall,
+  },
+  "building-electrical": {
+    intro:
+      "From planning to installation — distribution, lighting, cable management and cabling through site pits when the job needs lasting infrastructure.",
+    items: buildingElectricalServices,
+    image: siteImages.cablingThroughPit,
+  },
+  safety: {
+    intro:
+      "Testing, inspection and protection that catch problems early — keeping people and property safer.",
+    items: safetyServices,
+    image: siteImages.distributionBoardOpen,
+  },
+  maintenance: {
+    intro:
+      "Keep systems performing after install — one-time visits or ongoing care that protect your investment.",
+    items: maintenanceServices,
+    image: siteImages.distributionBoardClosed,
+  },
+} as const;

@@ -1,124 +1,65 @@
 import type { Metadata } from "next";
-import {
-  buildingElectricalServices,
-  criticalPowerApplications,
-  criticalPowerServices,
-  maintenanceServices,
-  safetyServices,
-  siteImages,
-  solarBenefits,
-  solarServices,
-} from "@/lib/content";
 import { Approach, CapabilitiesOverview } from "@/components/Capabilities";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { FaqSection } from "@/components/FaqSection";
-import { ContactSection, SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
-import { ServiceDetail } from "@/components/ServiceDetail";
-import { SiteHeader } from "@/components/SiteHeader";
-import { Industries, Standards, WhyChoose } from "@/components/WhyChoose";
+import { SiteShell } from "@/components/SiteShell";
+import { Industries, SafetySection, WhyChoose } from "@/components/WhyChoose";
+import { Button } from "@/components/Button";
 import { siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "San Marina Engineering | Solar Company Kisumu & Electrical Engineering Kenya",
+    absolute: "SM Solar & Electrical | Solar & Electrical Engineering Kenya",
   },
-  description: siteConfig.longDescription,
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title:
-      "San Marina Engineering | Solar Company Kisumu & Electrical Engineering Kenya",
-    description: siteConfig.description,
-    url: siteConfig.url,
-  },
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {
   return (
-    <>
-      <SiteHeader />
-      <main
-        id="main-content"
-        className="flex-1"
-        tabIndex={-1}
-        aria-label="San Marina Engineering main content"
-        itemScope
-        itemType="https://schema.org/WebPage"
+    <SiteShell>
+      <Hero />
+      <CapabilitiesOverview />
+      <FeaturedProjects />
+      <Approach />
+      <SafetySection />
+      <WhyChoose />
+      <Industries />
+      <FaqSection />
+
+      <section
+        className="safe-px section-y border-border border-t"
+        aria-labelledby="home-cta-heading"
       >
-        <Hero />
-        <CapabilitiesOverview />
-        <FeaturedProjects />
-        <Approach />
-
-        <div
-          className="border-border bg-bg-elevated border-y"
-          aria-label="Detailed capabilities"
-        >
-          <div className="safe-px mx-auto max-w-6xl pt-12 sm:pt-14">
-            <h2 className="font-display text-ink text-[clamp(1.35rem,3vw,1.75rem)] font-bold tracking-tight">
-              Solutions in detail
-            </h2>
-            <p className="text-muted mt-2 max-w-2xl text-sm text-pretty sm:text-base">
-              Dig into each solution — what it covers, how it helps, and what
-              our teams deliver on the ground across Kisumu and Kenya.
-            </p>
+        <div className="bg-accent mx-auto max-w-6xl rounded-2xl px-6 py-10 text-white sm:px-10 sm:py-12">
+          <h2
+            id="home-cta-heading"
+            className="font-display text-[clamp(1.45rem,3.2vw,1.95rem)] font-bold tracking-tight text-balance"
+          >
+            Ready for a site assessment?
+          </h2>
+          <p className="mt-3 max-w-2xl text-pretty text-white/90">
+            Tell us about your home or business in Kisumu or elsewhere in Kenya
+            — we’ll map a clear next step.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Button
+              href="/contact"
+              className="!text-accent !bg-white hover:!bg-teal-50"
+            >
+              Request a site assessment
+            </Button>
+            <Button
+              href={`https://wa.me/${siteConfig.whatsapp}`}
+              variant="secondary"
+              className="!border-white/35 !bg-white/10 !text-white hover:!border-white/60 hover:!bg-white/15"
+            >
+              WhatsApp an engineer
+            </Button>
           </div>
-
-          <ServiceDetail
-            id="solar"
-            title="Solar energy solutions in Kenya"
-            intro="Custom solar for homes, businesses, farms, and institutions in Kisumu and across Kenya — designed to cut costs and keep power reliable."
-            items={solarServices}
-            asideTitle="What you can expect"
-            asideItems={solarBenefits}
-            image={siteImages.rooftopSolarCrew}
-          />
-
-          <ServiceDetail
-            id="critical-power"
-            title="Critical power & battery storage"
-            intro="Keep essential operations running when the grid dips or drops — backup power that protects productivity and sensitive equipment."
-            items={criticalPowerServices}
-            asideTitle="Ideal for"
-            asideItems={criticalPowerApplications}
-            image={siteImages.siteDriveInstall}
-          />
-
-          <ServiceDetail
-            id="building-electrical"
-            title="Building electrical services"
-            intro="From planning to installation — distribution, lighting, cable management, and cabling through site pits when the job needs lasting infrastructure."
-            items={buildingElectricalServices}
-            image={siteImages.cablingThroughPit}
-          />
-
-          <ServiceDetail
-            id="safety"
-            title="Electrical safety & compliance"
-            intro="Testing, inspection, and protection that catch problems early — keeping people and property safer."
-            items={safetyServices}
-            image={siteImages.distributionBoardOpen}
-          />
-
-          <ServiceDetail
-            id="maintenance"
-            title="Care & maintenance"
-            intro="Keep systems performing after install — one-time visits or ongoing care that protect your investment."
-            items={maintenanceServices}
-            image={siteImages.distributionBoardClosed}
-          />
         </div>
-
-        <Standards />
-        <WhyChoose />
-        <Industries />
-        <FaqSection />
-        <ContactSection />
-      </main>
-      <SiteFooter />
-    </>
+      </section>
+    </SiteShell>
   );
 }
