@@ -22,14 +22,20 @@ Do not change these versions without an explicit project decision. See `.cursor/
 - Responsive layout from narrow phones through large desktops (includes `xs` breakpoint)
 - Homepage structured as a credibility brief: positioning → capabilities → detail → contact
 
-## Getting started
+## Contact form (Web3Forms)
+
+The contact section posts to [Web3Forms](https://web3forms.com) so submissions arrive by email — no backend required for static export.
+
+1. Create a free access key at https://web3forms.com (use the inbox that should receive leads).
+2. Copy `.env.example` to `.env.local` and set:
 
 ```bash
-npm install
-npm run dev
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your-access-key-here
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+3. Restart `npm run dev` or rebuild for production.
+
+The access key is safe to expose in the browser; it maps submissions to your verified email.
 
 ## Scripts
 

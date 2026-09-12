@@ -1,7 +1,7 @@
 import { company, navLinks } from "@/lib/content";
 import { siteConfig } from "@/lib/seo";
 import { BrandLogo } from "@/components/BrandLogo";
-import { Button } from "@/components/Button";
+import { ContactForm } from "@/components/ContactForm";
 import { Panel } from "@/components/Panel";
 
 export function ContactSection() {
@@ -13,72 +13,54 @@ export function ContactSection() {
       aria-describedby="contact-intro"
     >
       <div className="mx-auto max-w-6xl">
-        <Panel className="p-6 sm:p-10" role="region">
-          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-            <div>
-              <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-                Contact
-              </p>
-              <h2
-                id="contact-heading"
-                className="font-display text-ink mt-3 text-[clamp(1.4rem,3.2vw,1.85rem)] font-bold tracking-tight text-balance"
-              >
-                Let’s talk about your power needs.
-              </h2>
-              <p
-                id="contact-intro"
-                className="text-muted mt-3 max-w-xl text-[clamp(0.95rem,2.1vw,1.05rem)] leading-relaxed text-pretty"
-              >
-                New solar system, backup power, or an electrical upgrade —{" "}
-                {company.shortName} is ready to visit your site and map a clear
-                next step.
-              </p>
-              <div
-                className="xs:flex-row xs:flex-wrap mt-8 flex flex-col gap-3"
-                role="group"
-                aria-label="Contact actions"
-              >
-                <Button
-                  href={`mailto:${siteConfig.email}`}
-                  className="xs:w-auto w-full"
-                  aria-label={`Email ${company.name} at ${siteConfig.email}`}
-                >
-                  Request a site assessment
-                </Button>
-                <Button
-                  href="#capabilities"
-                  variant="secondary"
-                  className="xs:w-auto w-full"
-                >
-                  Browse solutions
-                </Button>
-              </div>
-              <p className="text-muted mt-5 text-sm">
-                <span className="sr-only">Email address: </span>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-accent focus-visible:outline-accent underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                >
-                  {siteConfig.email}
-                </a>
-              </p>
-            </div>
+        <div className="mb-8 max-w-2xl">
+          <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
+            Contact
+          </p>
+          <h2
+            id="contact-heading"
+            className="font-display text-ink mt-3 text-[clamp(1.5rem,3.2vw,2rem)] font-bold tracking-tight text-balance"
+          >
+            Talk to an engineer. Request a site assessment.
+          </h2>
+          <p
+            id="contact-intro"
+            className="text-muted mt-3 text-[clamp(0.95rem,2.1vw,1.05rem)] leading-relaxed text-pretty"
+          >
+            Share a few details about your home or business —{" "}
+            {company.shortName} will follow up with clear next steps.
+          </p>
+        </div>
 
-            <aside
-              className="bg-bg-muted flex flex-col items-start gap-4 rounded-xl border border-transparent p-6"
-              aria-label="Company summary"
-            >
-              <BrandLogo size="footer" />
-              <p className="font-display text-ink text-base font-semibold text-balance">
-                {company.name}
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.75fr)] lg:gap-8">
+          <Panel className="p-5 sm:p-8">
+            <ContactForm />
+          </Panel>
+
+          <aside
+            className="brand-card flex flex-col gap-5 p-6 sm:p-7"
+            aria-label="Other ways to reach us"
+          >
+            <BrandLogo size="footer" />
+            <div>
+              <h3 className="font-display text-ink text-base font-semibold">
+                Prefer to reach out directly?
+              </h3>
+              <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
+                Email us and we’ll respond as soon as we can.
               </p>
-              <p className="text-muted text-sm leading-relaxed text-pretty">
-                {company.tagline}
-              </p>
-              <p className="text-muted text-sm">{company.proofLine}</p>
-            </aside>
-          </div>
-        </Panel>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="text-accent focus-visible:outline-accent mt-3 inline-flex text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              >
+                {siteConfig.email}
+              </a>
+            </div>
+            <p className="text-muted border-border border-t pt-4 text-sm">
+              {company.proofLine}
+            </p>
+          </aside>
+        </div>
       </div>
     </section>
   );
