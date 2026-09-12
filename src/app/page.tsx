@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   buildingElectricalServices,
   criticalPowerApplications,
@@ -10,11 +11,30 @@ import {
 } from "@/lib/content";
 import { Approach, CapabilitiesOverview } from "@/components/Capabilities";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
+import { FaqSection } from "@/components/FaqSection";
 import { ContactSection, SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
 import { ServiceDetail } from "@/components/ServiceDetail";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Industries, Standards, WhyChoose } from "@/components/WhyChoose";
+import { siteConfig } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "San Marina Engineering | Solar Company Kisumu & Electrical Engineering Kenya",
+  },
+  description: siteConfig.longDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title:
+      "San Marina Engineering | Solar Company Kisumu & Electrical Engineering Kenya",
+    description: siteConfig.description,
+    url: siteConfig.url,
+  },
+};
 
 export default function Home() {
   return (
@@ -25,6 +45,8 @@ export default function Home() {
         className="flex-1"
         tabIndex={-1}
         aria-label="San Marina Engineering main content"
+        itemScope
+        itemType="https://schema.org/WebPage"
       >
         <Hero />
         <CapabilitiesOverview />
@@ -41,14 +63,14 @@ export default function Home() {
             </h2>
             <p className="text-muted mt-2 max-w-2xl text-sm text-pretty sm:text-base">
               Dig into each solution — what it covers, how it helps, and what
-              our teams deliver on the ground.
+              our teams deliver on the ground across Kisumu and Kenya.
             </p>
           </div>
 
           <ServiceDetail
             id="solar"
-            title="Solar energy solutions"
-            intro="Custom solar for homes, businesses, farms, and institutions — designed to cut costs and keep power reliable."
+            title="Solar energy solutions in Kenya"
+            intro="Custom solar for homes, businesses, farms, and institutions in Kisumu and across Kenya — designed to cut costs and keep power reliable."
             items={solarServices}
             asideTitle="What you can expect"
             asideItems={solarBenefits}
@@ -57,7 +79,7 @@ export default function Home() {
 
           <ServiceDetail
             id="critical-power"
-            title="Critical power solutions"
+            title="Critical power & battery storage"
             intro="Keep essential operations running when the grid dips or drops — backup power that protects productivity and sensitive equipment."
             items={criticalPowerServices}
             asideTitle="Ideal for"
@@ -93,6 +115,7 @@ export default function Home() {
         <Standards />
         <WhyChoose />
         <Industries />
+        <FaqSection />
         <ContactSection />
       </main>
       <SiteFooter />

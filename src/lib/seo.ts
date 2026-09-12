@@ -31,13 +31,7 @@ export const siteConfig = {
     latitude: -0.0917,
     longitude: 34.768,
   },
-  areaServed: [
-    "Kisumu",
-    "Kenya",
-    "Western Kenya",
-    "Nyanza",
-    "East Africa",
-  ],
+  areaServed: ["Kisumu", "Kenya", "Western Kenya", "Nyanza", "East Africa"],
   keywords: [
     "San Marina Engineering",
     "SM Solar & Electrical",
@@ -167,7 +161,12 @@ export function buildJsonLd() {
         "@id": `${url}/#organization`,
         name,
         legalName: siteConfig.legalName,
-        alternateName: [shortName, brandLine, "San Marina", "SM Solar & Electrical"],
+        alternateName: [
+          shortName,
+          brandLine,
+          "San Marina",
+          "SM Solar & Electrical",
+        ],
         url,
         email,
         telephone: [phone, phoneAlt],

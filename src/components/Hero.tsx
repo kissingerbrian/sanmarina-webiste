@@ -44,7 +44,8 @@ export function Hero() {
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-[clamp(1rem,2.3vw,1.15rem)] leading-relaxed text-pretty text-white/85">
-            {company.positioning}
+            {company.positioning} Serving homes and businesses in Kisumu and
+            across Kenya.
           </p>
           <div
             className="xs:flex-row xs:flex-wrap mt-8 flex flex-col gap-3"
