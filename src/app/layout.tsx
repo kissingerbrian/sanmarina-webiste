@@ -17,13 +17,12 @@ const sora = Sora({
   display: "swap",
 });
 
-const title =
-  "San Marina Engineering | Solar Company Kisumu & Electrical Engineering Kenya";
+const title = "SM Solar & Electrical | Solar & Electrical Engineering Kenya";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#1a5230" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a5230" },
+    { media: "(prefers-color-scheme: light)", color: "#004126" },
+    { media: "(prefers-color-scheme: dark)", color: "#004126" },
   ],
   colorScheme: "light",
   width: "device-width",

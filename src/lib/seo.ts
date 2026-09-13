@@ -2,30 +2,37 @@ import { featuredProjects, siteImages } from "@/lib/content";
 
 export const siteConfig = {
   name: "San Marina Engineering Limited",
-  shortName: "San Marina Engineering",
+  shortName: "SM Solar & Electrical",
   brandLine: "SM Solar & Electrical",
   legalName: "San Marina Engineering Limited",
   url: "https://www.sanmarina.engineering",
   locale: "en_KE",
   language: "en",
-  email: "info@sanmarina.engineering",
+  email: "sanmarinaengineering@gmail.com",
   phone: "+254717411822",
   phoneDisplay: "+254 717 411 822",
   phoneAlt: "+254750411822",
   phoneAltDisplay: "+254 750 411 822",
   whatsapp: "254717411822",
-  tagline: "Engineering Reliable Power. Building a Sustainable Future.",
+  tagline: "Engineered Power. Reliable Results.",
   description:
-    "San Marina Engineering Limited is a Kisumu, Kenya solar and electrical engineering company. We design, install and support solar PV, hybrid systems, battery storage, critical power, building electrical works, safety inspections and maintenance for homes, businesses and institutions.",
+    "Solar, battery storage, critical power and electrical engineering solutions for homes, businesses and institutions in Kenya.",
   longDescription:
-    "Looking for a trusted solar company in Kisumu or electrical contractor in Kenya? San Marina Engineering Limited (SM Solar & Electrical) delivers end-to-end solar energy, hybrid solar systems, battery energy storage, UPS and standby power, building electrical installation, earthing and surge protection, and operations & maintenance. From residential 5 kW and 10 kW hybrid packages to commercial rooftop solar and industrial electrical works, our teams assess, design, install and support reliable power systems across Kenya.",
+    "SM Solar & Electrical is the renewable energy and electrical solutions business of San Marina Engineering Limited. Based in Kisumu, we design, deliver and support solar PV, battery energy storage, critical power, building electrical systems, electrical safety and compliance, solar water pumping, consultancy and maintenance for homes, businesses and institutions across Kenya.",
   foundingLocation: "Kisumu, Kenya",
   address: {
-    streetAddress: "Ground Floor, Mega City Mall, Shop FGB-034",
+    streetAddress:
+      "Ground Floor, Mega City Mall, Shop FGB-034, Kisumu–Nairobi Highway",
     addressLocality: "Kisumu",
     addressRegion: "Kisumu County",
     addressCountry: "KE",
     postalCode: "",
+    lines: [
+      "Ground Floor, Mega City Mall",
+      "Shop FGB-034",
+      "Kisumu–Nairobi Highway",
+      "Kisumu, Kenya",
+    ] as const,
   },
   geo: {
     latitude: -0.0917,
@@ -33,8 +40,8 @@ export const siteConfig = {
   },
   areaServed: ["Kisumu", "Kenya", "Western Kenya", "Nyanza", "East Africa"],
   keywords: [
-    "San Marina Engineering",
     "SM Solar & Electrical",
+    "San Marina Engineering",
     "solar company Kenya",
     "solar company Kisumu",
     "solar installation Kisumu",
@@ -61,43 +68,56 @@ export const siteConfig = {
   ],
   services: [
     {
-      id: "solar",
+      id: "solar-energy",
       name: "Solar Energy Solutions",
       description:
-        "Residential, commercial and institutional solar PV and hybrid systems designed for Kenyan sites — including grid-tied, off-grid and solar water pumping.",
+        "Residential, commercial and institutional solar PV and hybrid systems — including grid-tied, off-grid and solar water pumping.",
+      url: "/solutions/solar-energy",
+    },
+    {
+      id: "battery-storage",
+      name: "Battery Energy Storage",
+      description:
+        "Battery solutions for solar storage, backup power, load shifting and critical loads.",
+      url: "/solutions/battery-storage",
     },
     {
       id: "critical-power",
-      name: "Critical Power & Battery Storage",
+      name: "Critical Power",
       description:
-        "UPS, battery energy storage, standby generators and transfer systems that keep essential operations running when the grid fails.",
+        "UPS, battery energy storage, standby generators and voltage-management solutions for operational continuity.",
+      url: "/solutions/critical-power",
     },
     {
-      id: "building-electrical",
-      name: "Building Electrical Services",
+      id: "electrical-infrastructure",
+      name: "Electrical Infrastructure",
       description:
-        "Electrical design, installation, distribution boards, lighting, cable management and infrastructure cabling for homes and commercial buildings.",
+        "Electrical design, installation, distribution, verification and commissioning for buildings and facilities.",
+      url: "/solutions/electrical-infrastructure",
     },
     {
-      id: "safety",
+      id: "electrical-safety",
       name: "Electrical Safety & Compliance",
       description:
-        "Testing, inspection, certification, earthing, surge and lightning protection to keep people and property safer.",
+        "Testing, inspection, earthing, surge and lightning protection, and compliance support.",
+      url: "/services/electrical-safety-compliance",
     },
     {
       id: "maintenance",
       name: "Operations & Maintenance",
       description:
-        "Preventive and corrective maintenance for solar, batteries, generators and electrical systems after installation.",
+        "Preventive and corrective maintenance for solar, batteries and electrical systems.",
+      url: "/services/maintenance",
     },
   ],
 } as const;
 
 export const faqItems = [
   {
-    question: "Does San Marina install solar in Kisumu and across Kenya?",
+    question:
+      "Does SM Solar & Electrical install solar in Kisumu and across Kenya?",
     answer:
-      "Yes. San Marina Engineering Limited is based in Kisumu and delivers solar PV, hybrid systems, electrical works and maintenance for homes, businesses and institutions across Kenya.",
+      "Yes. SM Solar & Electrical is based in Kisumu and delivers solar PV, hybrid systems, electrical works and maintenance for homes, businesses and institutions across Kenya.",
   },
   {
     question: "What is included in a site assessment?",
@@ -165,7 +185,7 @@ export function buildJsonLd() {
           shortName,
           brandLine,
           "San Marina",
-          "SM Solar & Electrical",
+          "San Marina Engineering Limited",
         ],
         url,
         email,
@@ -231,22 +251,22 @@ export function buildJsonLd() {
         "@type": "WebSite",
         "@id": `${url}/#website`,
         url,
-        name,
-        alternateName: brandLine,
+        name: brandLine,
+        alternateName: name,
         description,
         publisher: { "@id": `${url}/#organization` },
         inLanguage: "en-KE",
         potentialAction: {
           "@type": "CommunicateAction",
           name: "Request a site assessment",
-          target: `${url}/#contact`,
+          target: `${url}/contact`,
         },
       },
       {
         "@type": "WebPage",
         "@id": `${url}/#webpage`,
         url,
-        name: `${name} | Solar Company Kisumu & Electrical Engineering Kenya`,
+        name: "SM Solar & Electrical | Solar & Electrical Engineering Kenya",
         isPartOf: { "@id": `${url}/#website` },
         about: { "@id": `${url}/#organization` },
         description: longDescription,
@@ -258,10 +278,10 @@ export function buildJsonLd() {
           height: 630,
         },
         significantLink: [
-          `${url}/#capabilities`,
-          `${url}/#projects`,
-          `${url}/#solar`,
-          `${url}/#contact`,
+          `${url}/solutions`,
+          `${url}/services`,
+          `${url}/projects`,
+          `${url}/contact`,
         ],
         speakable: {
           "@type": "SpeakableSpecification",
@@ -271,7 +291,7 @@ export function buildJsonLd() {
       {
         "@type": "ProfessionalService",
         "@id": `${url}/#professional-service`,
-        name,
+        name: brandLine,
         url,
         image: ogImage,
         description: longDescription,
@@ -283,7 +303,7 @@ export function buildJsonLd() {
         serviceType: services.map((service) => service.name),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "San Marina engineering solutions",
+          name: "SM Solar & Electrical solutions",
           itemListElement: services.map((service, index) => ({
             "@type": "OfferCatalog",
             name: service.name,
@@ -295,7 +315,7 @@ export function buildJsonLd() {
                   "@id": `${url}/#${service.id}`,
                   name: service.name,
                   description: service.description,
-                  url: `${url}/#${service.id}`,
+                  url: absoluteUrl(service.url),
                   provider: { "@id": `${url}/#organization` },
                   areaServed: "Kenya",
                 },
@@ -315,21 +335,21 @@ export function buildJsonLd() {
           "@type": "ListItem",
           position: index + 1,
           name: service.name,
-          url: `${url}/#${service.id}`,
+          url: absoluteUrl(service.url),
           description: service.description,
         })),
       },
       {
         "@type": "ItemList",
         "@id": `${url}/#projects-list`,
-        name: "Featured San Marina projects",
+        name: "Featured SM Solar & Electrical projects",
         itemListOrder: "https://schema.org/ItemListOrderAscending",
         numberOfItems: featuredProjects.length,
         itemListElement: featuredProjects.map((project, index) => ({
           "@type": "ListItem",
           position: index + 1,
           name: project.title,
-          url: `${url}/#projects`,
+          url: absoluteUrl(`/projects/${project.id}`),
           description: `${project.summary} (${project.location})`,
           image: absoluteUrl(project.image.src),
         })),
@@ -360,32 +380,32 @@ export function buildJsonLd() {
             "@type": "ListItem",
             position: 2,
             name: "Solutions",
-            item: `${url}/#capabilities`,
+            item: `${url}/solutions`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Projects",
-            item: `${url}/#projects`,
+            item: `${url}/projects`,
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Contact",
-            item: `${url}/#contact`,
+            item: `${url}/contact`,
           },
         ],
       },
       {
         "@type": "ImageGallery",
         "@id": `${url}/#gallery`,
-        name: "San Marina project photography",
+        name: "SM Solar & Electrical project photography",
         about: { "@id": `${url}/#organization` },
         image: Object.values(siteImages).map((image) => ({
           "@type": "ImageObject",
           contentUrl: absoluteUrl(image.src),
           description: image.alt,
-          creditText: name,
+          creditText: brandLine,
         })),
       },
     ],

@@ -1,22 +1,11 @@
 "use client";
 
 import { useId, useState, type FormEvent } from "react";
+import { contactProjectTypes } from "@/lib/content";
 import { Button } from "@/components/Button";
 import { trackEvent } from "@/lib/analytics";
 
-const projectTypes = [
-  "Solar",
-  "Battery storage",
-  "Critical power",
-  "Electrical works",
-  "Inspection & compliance",
-  "Maintenance",
-  "Consultancy",
-  "Solar pumping",
-  "Other",
-] as const;
-
-const contactMethods = ["Phone call", "WhatsApp", "Email"] as const;
+const projectTypes = contactProjectTypes;
 
 const fieldClass =
   "border-border bg-bg-elevated text-ink focus:border-accent focus:ring-accent/20 w-full rounded-lg border px-3.5 py-2.5 text-sm outline-none transition focus:ring-2";
@@ -54,8 +43,8 @@ export function ContactForm() {
 
     const payload = {
       access_key: accessKey,
-      subject: "San Marina — site assessment request",
-      from_name: "San Marina Website",
+      subject: "SM Solar & Electrical — site assessment request",
+      from_name: "SM Solar & Electrical Website",
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
@@ -63,7 +52,6 @@ export function ContactForm() {
       project_type: String(formData.get("project_type") ?? ""),
       monthly_bill: String(formData.get("monthly_bill") ?? ""),
       existing_solar: String(formData.get("existing_solar") ?? ""),
-      preferred_contact: String(formData.get("preferred_contact") ?? ""),
       message: String(formData.get("message") ?? ""),
     };
 
@@ -117,8 +105,8 @@ export function ContactForm() {
           Thank you — we received your request.
         </h3>
         <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
-          Our team will review your details and get back to you shortly. If it’s
-          urgent, email us and we’ll prioritise your message.
+          Our team will review your details and get back to you shortly. If it
+          is urgent, WhatsApp or call us and we will prioritise your message.
         </p>
         <Button
           type="button"
@@ -151,7 +139,7 @@ export function ContactForm() {
 
       <div className="sm:col-span-1">
         <label htmlFor={`${formId}-name`} className={labelClass}>
-          Full name
+          Name*
         </label>
         <input
           id={`${formId}-name`}
@@ -166,7 +154,7 @@ export function ContactForm() {
 
       <div className="sm:col-span-1">
         <label htmlFor={`${formId}-phone`} className={labelClass}>
-          Phone
+          Phone number*
         </label>
         <input
           id={`${formId}-phone`}
@@ -187,7 +175,6 @@ export function ContactForm() {
           id={`${formId}-email`}
           name="email"
           type="email"
-          required
           autoComplete="email"
           className={fieldClass}
           placeholder="you@example.com"
@@ -196,7 +183,7 @@ export function ContactForm() {
 
       <div className="sm:col-span-1">
         <label htmlFor={`${formId}-location`} className={labelClass}>
-          Location
+          Location*
         </label>
         <input
           id={`${formId}-location`}
@@ -211,7 +198,7 @@ export function ContactForm() {
 
       <div className="sm:col-span-1">
         <label htmlFor={`${formId}-project`} className={labelClass}>
-          Project type
+          Project type*
         </label>
         <select
           id={`${formId}-project`}
@@ -233,7 +220,7 @@ export function ContactForm() {
 
       <div className="sm:col-span-1">
         <label htmlFor={`${formId}-bill`} className={labelClass}>
-          Approx. monthly electricity bill
+          Approximate monthly electricity bill
         </label>
         <input
           id={`${formId}-bill`}
@@ -244,7 +231,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="sm:col-span-1">
+      <div className="sm:col-span-2">
         <label htmlFor={`${formId}-solar`} className={labelClass}>
           Existing solar system?
         </label>
@@ -256,35 +243,12 @@ export function ContactForm() {
         >
           <option value="No">No</option>
           <option value="Yes">Yes</option>
-          <option value="Not sure">Not sure</option>
-        </select>
-      </div>
-
-      <div className="sm:col-span-1">
-        <label htmlFor={`${formId}-prefer`} className={labelClass}>
-          Preferred contact method
-        </label>
-        <select
-          id={`${formId}-prefer`}
-          name="preferred_contact"
-          required
-          className={fieldClass}
-          defaultValue=""
-        >
-          <option value="" disabled>
-            How should we reach you?
-          </option>
-          {contactMethods.map((method) => (
-            <option key={method} value={method}>
-              {method}
-            </option>
-          ))}
         </select>
       </div>
 
       <div className="sm:col-span-2">
         <label htmlFor={`${formId}-message`} className={labelClass}>
-          Tell us what you need
+          Tell us about your requirement*
         </label>
         <textarea
           id={`${formId}-message`}
@@ -308,8 +272,8 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-muted text-xs leading-relaxed">
-          Submissions are delivered to our inbox. We’ll only use your details to
-          respond to this request.
+          Submissions are delivered to our inbox. We&apos;ll only use your
+          details to respond to this request.
         </p>
         <Button
           type="submit"
@@ -317,7 +281,7 @@ export function ContactForm() {
           disabled={status === "submitting"}
           aria-busy={status === "submitting"}
         >
-          {status === "submitting" ? "Sending…" : "Request a site assessment"}
+          {status === "submitting" ? "Sending…" : "Submit request"}
         </Button>
       </div>
     </form>

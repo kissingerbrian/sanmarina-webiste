@@ -1,25 +1,34 @@
-# San Marina Engineering Limited
+# SM Solar & Electrical (San Marina Engineering Limited)
 # https://www.sanmarina.engineering
 
-> San Marina Engineering Limited (SM Solar & Electrical) is a Kisumu, Kenya company providing solar PV, hybrid solar, battery storage, critical power, building electrical, safety compliance, and maintenance services.
+> SM Solar & Electrical is the renewable energy and electrical solutions business of San Marina Engineering Limited. Based in Kisumu, Kenya, we design, deliver and support solar PV, battery energy storage, critical power, electrical infrastructure, solar water pumping, safety & compliance, consultancy and maintenance for homes, businesses and institutions.
 
 ## Priority pages
 - Home: https://www.sanmarina.engineering/
-- Solutions: https://www.sanmarina.engineering/#capabilities
-- Projects: https://www.sanmarina.engineering/#projects
-- Solar: https://www.sanmarina.engineering/#solar
-- Critical power: https://www.sanmarina.engineering/#critical-power
-- Building electrical: https://www.sanmarina.engineering/#building-electrical
-- Safety: https://www.sanmarina.engineering/#safety
-- Maintenance: https://www.sanmarina.engineering/#maintenance
-- FAQ: https://www.sanmarina.engineering/#faq
-- Contact / site assessment: https://www.sanmarina.engineering/#contact
+- About: https://www.sanmarina.engineering/about
+- Solutions: https://www.sanmarina.engineering/solutions
+- Solar energy: https://www.sanmarina.engineering/solutions/solar-energy
+- Battery storage: https://www.sanmarina.engineering/solutions/battery-storage
+- Critical power: https://www.sanmarina.engineering/solutions/critical-power
+- Electrical infrastructure: https://www.sanmarina.engineering/solutions/electrical-infrastructure
+- Solar water pumping: https://www.sanmarina.engineering/solutions/solar-water-pumping
+- Services: https://www.sanmarina.engineering/services
+- Projects: https://www.sanmarina.engineering/projects
+- Products: https://www.sanmarina.engineering/products
+- Solar packages: https://www.sanmarina.engineering/solar-packages
+- Insights: https://www.sanmarina.engineering/insights
+- Contact / site assessment: https://www.sanmarina.engineering/contact
 
 ## Contact
-- Email: info@sanmarina.engineering
-- Phone: +254 717 411 822
-- Alt phone: +254 750 411 822
-- Address: Ground Floor, Mega City Mall, Shop FGB-034, Kisumu, Kenya
+- Email: sanmarinaengineering@gmail.com
+- Phone / WhatsApp: +254 717 411 822
+- Address: Ground Floor, Mega City Mall, Shop FGB-034, Kisumu–Nairobi Highway, Kisumu, Kenya
+
+## Brand
+- Public brand: SM Solar & Electrical
+- Legal entity: San Marina Engineering Limited
+- Tagline: Engineered Power. Reliable Results.
+- Proof line: Solar Energy | Critical Power | Electrical Engineering
 
 ## Topics we want to rank for
 - Solar company Kisumu / Kenya
@@ -28,6 +37,7 @@
 - Electrical contractor Kisumu
 - Battery storage Kenya
 - UPS and critical power Kenya
+- Solar water pumping Kenya
 - Electrical inspection Kenya
 
 ## Source of truth

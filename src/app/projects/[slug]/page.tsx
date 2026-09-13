@@ -100,6 +100,14 @@ export default async function ProjectDetailPage({ params }: Props) {
               <dl className="text-muted mt-4 space-y-3 text-sm">
                 <div>
                   <dt className="font-display text-ink text-xs tracking-wider uppercase">
+                    Capacity
+                  </dt>
+                  <dd className="mt-1">
+                    {project.capacity ?? "See project notes"}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-display text-ink text-xs tracking-wider uppercase">
                     Location
                   </dt>
                   <dd className="mt-1">{project.location}</dd>

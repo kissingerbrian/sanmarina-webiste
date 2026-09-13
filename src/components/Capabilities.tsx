@@ -1,31 +1,37 @@
-import { approachSteps, capabilities } from "@/lib/content";
+import {
+  approachSteps,
+  homeSolutions,
+  trustHeadline,
+  trustNote,
+} from "@/lib/content";
 import { BrandMediaCard } from "@/components/BrandMediaCard";
 
 export function CapabilitiesOverview() {
   return (
     <section
-      id="capabilities"
+      id="solutions"
       className="safe-px section-y scroll-mt-20"
-      aria-labelledby="capabilities-heading"
-      aria-describedby="capabilities-intro"
+      aria-labelledby="solutions-heading"
+      aria-describedby="solutions-intro"
     >
       <div className="mx-auto max-w-6xl">
         <header className="mx-auto max-w-2xl text-center">
           <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Solutions
+            Our solutions
           </p>
           <h2
-            id="capabilities-heading"
+            id="solutions-heading"
             className="font-display text-ink mt-3 text-[clamp(1.55rem,3.5vw,2.15rem)] font-bold tracking-tight text-balance"
           >
-            Serious power infrastructure for serious operations.
+            Energy solutions designed around your needs
           </h2>
           <p
-            id="capabilities-intro"
+            id="solutions-intro"
             className="text-muted mt-3 text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
           >
-            Five engineering disciplines — presented as clear solutions for
-            homes, businesses and institutions.
+            Solar, critical power, electrical engineering, safety and
+            consultancy — presented as clear paths for homes, businesses and
+            institutions.
           </p>
         </header>
 
@@ -34,19 +40,19 @@ export function CapabilitiesOverview() {
           role="list"
           aria-label="Solutions"
         >
-          {capabilities.map((item, index) => (
+          {homeSolutions.map((item, index) => (
             <li
               key={item.id}
               className={index === 4 ? "sm:col-span-2 lg:col-span-1" : ""}
             >
               <BrandMediaCard
-                href={`/solutions/${item.id}`}
+                href={item.href}
                 image={item.image}
                 title={item.title}
                 description={item.summary}
                 meta={item.meta}
                 eyebrow={String(index + 1).padStart(2, "0")}
-                cta="Explore"
+                cta={item.cta}
                 imageHeightClassName="h-44 sm:h-52"
               />
             </li>
@@ -74,14 +80,15 @@ export function Approach() {
             id="approach-heading"
             className="font-display text-ink mt-3 text-[clamp(1.55rem,3.5vw,2.15rem)] font-bold tracking-tight text-balance"
           >
-            A disciplined path from conversation to reliable power
+            Power that is engineered for you
           </h2>
           <p
             id="approach-intro"
             className="text-muted mt-3 text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
           >
-            Understand → Engineer → Deliver → Sustain — our signature delivery
-            model.
+            A good energy system is more than a collection of equipment. It
+            needs to be properly assessed, correctly sized, safely installed and
+            designed to perform reliably for years.
           </p>
         </header>
 
@@ -109,6 +116,54 @@ export function Approach() {
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+  );
+}
+
+export function TechnologyTrust() {
+  return (
+    <section
+      id="technology"
+      className="safe-px section-y border-border scroll-mt-20 border-t"
+      aria-labelledby="technology-heading"
+    >
+      <div className="mx-auto max-w-6xl text-center">
+        <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
+          Technology we trust
+        </p>
+        <h2
+          id="technology-heading"
+          className="font-display text-ink mt-3 text-[clamp(1.45rem,3.2vw,1.95rem)] font-bold tracking-tight text-balance"
+        >
+          Established technology, selected for the application
+        </h2>
+        <p className="text-muted mx-auto mt-3 max-w-2xl text-pretty">
+          We work with established technology and equipment manufacturers
+          selected according to project requirements — not a one-brand push.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+export function TrustCredentials() {
+  return (
+    <section
+      id="trust"
+      className="safe-px section-y bg-accent scroll-mt-20 text-white"
+      aria-labelledby="trust-heading"
+    >
+      <div className="mx-auto max-w-6xl text-center">
+        <h2
+          id="trust-heading"
+          className="font-display text-[clamp(1.45rem,3.2vw,1.95rem)] font-bold tracking-tight text-balance uppercase"
+        >
+          {trustHeadline}
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-white/85">
+          {trustNote}
+        </p>
       </div>
     </section>
   );

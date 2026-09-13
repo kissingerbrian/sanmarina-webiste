@@ -32,19 +32,22 @@ export function SafetySection() {
               id="safety-highlight-heading"
               className="font-display mt-3 text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold tracking-tight text-balance"
             >
-              Safety is engineering.
+              Identify risks. Verify performance.
             </h2>
           </div>
         </div>
         <div className="border-border bg-bg-elevated border p-8 sm:p-10 lg:border-l-0">
           <p className="text-muted text-[clamp(0.98rem,2.1vw,1.1rem)] leading-relaxed text-pretty">
-            Protection, testing and compliance are not optional extras. They are
-            part of how we design and deliver reliable systems — including
-            earthing, surge protection, lightning protection, inspection and
-            verification.
+            Identify electrical risks, improve system safety and verify that
+            installations perform as intended — including testing and
+            inspection, earthing, lightning protection, surge protection and
+            compliance verification.
           </p>
-          <Button href="/solutions/safety" className="mt-6">
-            Explore safety services
+          <Button
+            href="/services/electrical-safety-compliance"
+            className="mt-6"
+          >
+            Explore safety & compliance
           </Button>
         </div>
       </div>
@@ -66,23 +69,24 @@ export function WhyChoose() {
             id="why-us-heading"
             className="font-display text-ink text-[clamp(1.5rem,3.2vw,2rem)] font-bold tracking-tight text-balance"
           >
-            Why customers choose San Marina
+            Why SM Solar & Electrical?
           </h2>
           <p id="why-us-intro" className="text-muted mt-3 text-pretty">
-            Not another faceless installer — a brand you remember because the
-            experience feels clear, human and reliable.
+            An engineering company that designs and delivers reliable power
+            systems — solar is one of the technologies we use, not the entire
+            identity.
           </p>
         </header>
 
         <ul
           className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           role="list"
-          aria-label="Reasons to choose San Marina"
+          aria-label="Reasons to choose SM Solar & Electrical"
         >
           {whyChooseUs.map((item) => (
             <li key={item.title}>
               <article className="brand-card group h-full p-5 sm:p-6">
-                <h3 className="font-display text-ink group-hover:text-accent text-base font-semibold transition-colors">
+                <h3 className="font-display text-ink group-hover:text-accent text-base font-semibold tracking-wide uppercase transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted mt-2 text-sm leading-relaxed text-pretty">
@@ -114,8 +118,8 @@ export function Industries() {
             Built for the places you care about
           </h2>
           <p id="industries-intro" className="text-muted mt-3 text-pretty">
-            Grouped by the environments we serve — with solutions shaped around
-            how each one uses power.
+            Different buildings have different energy requirements. We assess
+            the application first, then engineer the solution.
           </p>
         </header>
 
@@ -130,7 +134,7 @@ export function Industries() {
                 image={industry.image}
                 title={industry.title}
                 description={industry.summary}
-                cta="Talk to us"
+                cta="Talk to an engineer"
                 href="/contact"
                 imageHeightClassName="h-40 sm:h-44"
               />

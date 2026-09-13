@@ -1,5 +1,12 @@
 import type { MetadataRoute } from "next";
-import { capabilities, featuredProjects, siteImages } from "@/lib/content";
+import {
+  featuredProjects,
+  insights,
+  serviceSlugs,
+  siteImages,
+  solarPackages,
+  solutionSlugs,
+} from "@/lib/content";
 import { absoluteUrl } from "@/lib/seo";
 
 export const dynamic = "force-static";
@@ -14,10 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     { path: "/", priority: 1 },
-    { path: "/about", priority: 0.8 },
+    { path: "/about", priority: 0.85 },
+    { path: "/solutions", priority: 0.9 },
+    { path: "/services", priority: 0.9 },
     { path: "/projects", priority: 0.9 },
-    { path: "/contact", priority: 0.9 },
+    { path: "/products", priority: 0.85 },
     { path: "/solar-packages", priority: 0.85 },
+    { path: "/insights", priority: 0.8 },
+    { path: "/contact", priority: 0.95 },
   ];
 
   return [
@@ -28,8 +39,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: route.priority,
       images: route.path === "/" ? imageUrls : undefined,
     })),
-    ...capabilities.map((item) => ({
-      url: absoluteUrl(`/solutions/${item.id}`),
+    ...solutionSlugs.map((slug) => ({
+      url: absoluteUrl(`/solutions/${slug}`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    ...serviceSlugs.map((slug) => ({
+      url: absoluteUrl(`/services/${slug}`),
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
@@ -40,6 +57,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.75,
       images: [absoluteUrl(project.image.src)],
+    })),
+    ...solarPackages.map((pkg) => ({
+      url: absoluteUrl(`/solar-packages/${pkg.id}`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...insights.map((insight) => ({
+      url: absoluteUrl(`/insights/${insight.id}`),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
     })),
   ];
 }

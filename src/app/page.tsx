@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { Approach, CapabilitiesOverview } from "@/components/Capabilities";
+import {
+  Approach,
+  CapabilitiesOverview,
+  TechnologyTrust,
+  TrustCredentials,
+} from "@/components/Capabilities";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { FaqSection } from "@/components/FaqSection";
 import { Hero } from "@/components/Hero";
 import { SiteShell } from "@/components/SiteShell";
 import { Industries, SafetySection, WhyChoose } from "@/components/WhyChoose";
 import { Button } from "@/components/Button";
+import { pageSeo } from "@/lib/content";
 import { siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "SM Solar & Electrical | Solar & Electrical Engineering Kenya",
+    absolute: pageSeo.home.title,
   },
-  description: siteConfig.description,
+  description: pageSeo.home.description,
   alternates: { canonical: "/" },
 };
 
@@ -20,11 +26,13 @@ export default function Home() {
   return (
     <SiteShell>
       <Hero />
+      <Approach />
       <CapabilitiesOverview />
       <FeaturedProjects />
-      <Approach />
-      <SafetySection />
       <WhyChoose />
+      <TechnologyTrust />
+      <SafetySection />
+      <TrustCredentials />
       <Industries />
       <FaqSection />
 
@@ -37,11 +45,15 @@ export default function Home() {
             id="home-cta-heading"
             className="font-display text-[clamp(1.45rem,3.2vw,1.95rem)] font-bold tracking-tight text-balance"
           >
-            Ready for a site assessment?
+            Ready to build a better power system?
           </h2>
           <p className="mt-3 max-w-2xl text-pretty text-white/90">
-            Tell us about your home or business in Kisumu or elsewhere in Kenya
-            — we’ll map a clear next step.
+            Whether you need solar for your home, backup power for your business
+            or professional electrical engineering support, we can help you
+            determine the right solution.
+          </p>
+          <p className="font-display mt-4 text-base font-semibold text-white">
+            Let&apos;s design the right power solution for you.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Button
