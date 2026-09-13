@@ -1,6 +1,9 @@
+import Image from "next/image";
 import {
+  approachIntro,
   approachSteps,
   homeSolutions,
+  technologyPartners,
   trustHeadline,
   trustNote,
 } from "@/lib/content";
@@ -17,7 +20,7 @@ export function CapabilitiesOverview() {
       <div className="mx-auto max-w-6xl">
         <header className="mx-auto max-w-2xl text-center">
           <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Our solutions
+            Energy solutions
           </p>
           <h2
             id="solutions-heading"
@@ -38,7 +41,7 @@ export function CapabilitiesOverview() {
         <ul
           className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
           role="list"
-          aria-label="Solutions"
+          aria-label="Energy solutions"
         >
           {homeSolutions.map((item, index) => (
             <li
@@ -82,14 +85,14 @@ export function Approach() {
           >
             Power that is engineered for you
           </h2>
-          <p
+          <div
             id="approach-intro"
-            className="text-muted mt-3 text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
+            className="text-muted mt-3 space-y-3 text-[clamp(0.95rem,2.2vw,1.05rem)] text-pretty"
           >
-            A good energy system is more than a collection of equipment. It
-            needs to be properly assessed, correctly sized, safely installed and
-            designed to perform reliably for years.
-          </p>
+            {approachIntro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </header>
 
         <ol
@@ -128,20 +131,42 @@ export function TechnologyTrust() {
       className="safe-px section-y border-border scroll-mt-20 border-t"
       aria-labelledby="technology-heading"
     >
-      <div className="mx-auto max-w-6xl text-center">
-        <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-          Technology we trust
-        </p>
-        <h2
-          id="technology-heading"
-          className="font-display text-ink mt-3 text-[clamp(1.45rem,3.2vw,1.95rem)] font-bold tracking-tight text-balance"
+      <div className="mx-auto max-w-6xl">
+        <header className="mx-auto max-w-2xl text-center">
+          <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
+            Technology we trust
+          </p>
+          <h2
+            id="technology-heading"
+            className="font-display text-ink mt-3 text-[clamp(1.45rem,3.2vw,1.95rem)] font-bold tracking-tight text-balance"
+          >
+            Established technology, selected for the application
+          </h2>
+          <p className="text-muted mt-3 text-pretty">
+            We work with established technology and equipment manufacturers
+            selected according to project requirements — not a one-brand push.
+          </p>
+        </header>
+
+        <ul
+          className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+          role="list"
+          aria-label="Technology partners"
         >
-          Established technology, selected for the application
-        </h2>
-        <p className="text-muted mx-auto mt-3 max-w-2xl text-pretty">
-          We work with established technology and equipment manufacturers
-          selected according to project requirements — not a one-brand push.
-        </p>
+          {technologyPartners.map((partner) => (
+            <li key={partner.id}>
+              <div className="border-border bg-bg-elevated flex min-h-[5.5rem] items-center justify-center border px-4 py-4">
+                <Image
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  width={160}
+                  height={54}
+                  className="h-10 w-auto max-w-full object-contain"
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -191,6 +191,12 @@ export const navLinks: readonly NavItem[] = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const approachIntro = [
+  "A good energy system is more than a collection of equipment.",
+  "It needs to be properly assessed, correctly sized, safely installed and designed to perform reliably for years.",
+  "That is why we take an engineering-led approach to every project.",
+] as const;
+
 export const approachSteps = [
   {
     title: "Understand",
@@ -272,7 +278,7 @@ export const homeSolutions = [
     title: "Critical Power Solutions",
     summary:
       "Keep essential loads operating when the grid cannot — battery storage, UPS, standby generation and voltage management.",
-    meta: "BESS · UPS · Generators · Voltage · Power Quality",
+    meta: "BESS · UPS · Generators · Voltage Stabilisation · Power Quality",
     href: "/solutions/critical-power",
     cta: "Explore critical power",
     image: siteImages.siteDriveInstall,
@@ -281,8 +287,8 @@ export const homeSolutions = [
     id: "electrical-infrastructure",
     title: "Electrical Engineering",
     summary:
-      "Safe and reliable electrical infrastructure — design, installations, distribution, verification, supervision, testing and commissioning.",
-    meta: "Design · Installation · Distribution · Commissioning",
+      "Safe and reliable electrical infrastructure — design, installations, verification, supervision, testing and commissioning.",
+    meta: "Design · Installation · Commissioning",
     href: "/solutions/electrical-infrastructure",
     cta: "Explore electrical services",
     image: siteImages.distributionBoardClosed,
@@ -690,7 +696,7 @@ export const products = [
   },
   {
     id: "inverters",
-    title: "Hybrid & Solar Inverters",
+    title: "Inverters",
     body: "Inverters for grid-tied, hybrid and off-grid applications.",
     cta: "Enquire about inverters",
   },
@@ -717,6 +723,110 @@ export const products = [
     title: "Electrical Protection & Balance of System",
     body: "DC and AC protection, surge protection, isolators, distribution equipment, cables, connectors, earthing equipment and electrical accessories.",
     cta: "Enquire about protection equipment",
+  },
+] as const;
+
+/** Manufacturer / technology partners shown on “Technology we trust”. */
+export const technologyPartners = [
+  {
+    id: "jinko",
+    name: "Jinko",
+    logo: "/images/partners/jinko.webp",
+  },
+  {
+    id: "trina",
+    name: "Trina",
+    logo: "/images/partners/trina.webp",
+  },
+  {
+    id: "ja",
+    name: "JA",
+    logo: "/images/partners/ja.webp",
+  },
+  {
+    id: "longi",
+    name: "Longi",
+    logo: "/images/partners/longi.webp",
+  },
+  {
+    id: "srne",
+    name: "SRNE",
+    logo: "/images/partners/srne.webp",
+  },
+  {
+    id: "solis",
+    name: "Solis",
+    logo: "/images/partners/solis.webp",
+  },
+  {
+    id: "deye",
+    name: "Deye",
+    logo: "/images/partners/deye.webp",
+  },
+  {
+    id: "growatt",
+    name: "Growatt",
+    logo: "/images/partners/growatt.webp",
+  },
+  {
+    id: "ronergy",
+    name: "Ronergy",
+    logo: "/images/partners/ronergy.webp",
+  },
+  {
+    id: "huawei",
+    name: "Huawei",
+    logo: "/images/partners/huawei.webp",
+  },
+  {
+    id: "tbb-power",
+    name: "TBB Power",
+    logo: "/images/partners/tbb-power.webp",
+  },
+  {
+    id: "dyness",
+    name: "Dyness",
+    logo: "/images/partners/dyness.webp",
+  },
+  {
+    id: "dayliff",
+    name: "Dayliff",
+    logo: "/images/partners/dayliff.webp",
+  },
+  {
+    id: "maqbul",
+    name: "MAQBUL",
+    logo: "/images/partners/maqbul.webp",
+  },
+  {
+    id: "veichi",
+    name: "Veichi",
+    logo: "/images/partners/veichi.webp",
+  },
+  {
+    id: "ultrasun",
+    name: "Ultrasun",
+    logo: "/images/partners/ultrasun.webp",
+  },
+  {
+    id: "megasun",
+    name: "Megasun",
+    logo: "/images/partners/megasun.webp",
+  },
+  {
+    id: "aquaheat",
+    name: "AquaHeat",
+    logo: "/images/partners/aquaheat.webp",
+  },
+  {
+    id: "suntree",
+    name: "Suntree",
+    logo: "/images/partners/suntree.webp",
+  },
+  {
+    id: "leader",
+    name: "LEADER",
+    logo: "/images/partners/leader.webp",
   },
 ] as const;
 
@@ -1003,7 +1113,7 @@ export const contactNextSteps = [
 export const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/company/smengineeringco/",
   },
   {
     label: "Facebook",
