@@ -769,9 +769,9 @@ export const technologyPartners = [
     logo: "/images/partners/growatt.webp",
   },
   {
-    id: "ronergy",
-    name: "Ronergy",
-    logo: "/images/partners/ronergy.webp",
+    id: "renergy",
+    name: "Renergy",
+    logo: "/images/partners/renergy.webp",
   },
   {
     id: "huawei",
@@ -789,9 +789,9 @@ export const technologyPartners = [
     logo: "/images/partners/dyness.webp",
   },
   {
-    id: "dayliff",
-    name: "Dayliff",
-    logo: "/images/partners/dayliff.webp",
+    id: "davis-and-shirtliff",
+    name: "Davis & Shirtliff",
+    logo: "/images/partners/davis-and-shirtliff.webp",
   },
   {
     id: "maqbul",
@@ -802,11 +802,6 @@ export const technologyPartners = [
     id: "veichi",
     name: "Veichi",
     logo: "/images/partners/veichi.webp",
-  },
-  {
-    id: "ultrasun",
-    name: "Ultrasun",
-    logo: "/images/partners/ultrasun.webp",
   },
   {
     id: "megasun",

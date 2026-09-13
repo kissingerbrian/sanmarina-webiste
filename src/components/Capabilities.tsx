@@ -125,13 +125,15 @@ export function Approach() {
 }
 
 export function TechnologyTrust() {
+  const partnerNames = technologyPartners.map((partner) => partner.name);
+
   return (
     <section
       id="technology"
-      className="safe-px section-y border-border scroll-mt-20 border-t"
+      className="section-y border-border scroll-mt-20 border-t"
       aria-labelledby="technology-heading"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="safe-px mx-auto max-w-6xl">
         <header className="mx-auto max-w-2xl text-center">
           <p className="font-display text-accent text-xs font-semibold tracking-[0.18em] uppercase">
             Technology we trust
@@ -147,26 +149,40 @@ export function TechnologyTrust() {
             selected according to project requirements — not a one-brand push.
           </p>
         </header>
+      </div>
 
-        <ul
-          className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
-          role="list"
-          aria-label="Technology partners"
-        >
-          {technologyPartners.map((partner) => (
-            <li key={partner.id}>
-              <div className="border-border bg-bg-elevated flex min-h-[5.5rem] items-center justify-center border px-4 py-4">
-                <Image
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  width={160}
-                  height={54}
-                  className="h-10 w-auto max-w-full object-contain"
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="mt-8">
+        <p className="sr-only">
+          Technology partners: {partnerNames.join(", ")}
+        </p>
+        <div className="partner-marquee" aria-hidden="true">
+          <div className="partner-marquee-track">
+            {[0, 1].map((copy) => (
+              <ul
+                key={copy}
+                className="partner-marquee-group"
+                role="presentation"
+              >
+                {technologyPartners.map((partner) => (
+                  <li
+                    key={`${copy}-${partner.id}`}
+                    className="partner-marquee-logo"
+                  >
+                    <div className="border-border bg-bg-elevated flex h-full min-h-[5.25rem] items-center justify-center border px-4 py-3">
+                      <Image
+                        src={partner.logo}
+                        alt=""
+                        width={140}
+                        height={48}
+                        className="h-9 w-auto max-w-full object-contain"
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
